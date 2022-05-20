@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from'./Home/Home.js'
+import Deck from './Deck/Deckofoptions.js'
+import Landingpage from './LandingPage/Landingpage'
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+			<>
+				
+				<Route path='*' element={<Home />}></Route>
+				<Route path='/landingpage' element={<Landingpage />}></Route>
+				<Route path='/characterinfopage' element={<Deck />}></Route>
+				<Route path='/login' element={<Deck />}></Route>
+				<Route path='/signup' element={<Deck />}></Route>
+				<Route path='/swipe' element={<Deck />}></Route>
+			</>
+		</Routes>
   );
 }
 

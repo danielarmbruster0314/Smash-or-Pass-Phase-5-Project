@@ -1,0 +1,23 @@
+h1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    width: auto; 
+    margin-top: 50px;
+}
+
+
+.bottom_passes{
+    margin-top: 250px;
+}
+.landingpage{
+    
+    background-size: 400% 400%;
+    
+}
+
+
