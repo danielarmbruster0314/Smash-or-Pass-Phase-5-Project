@@ -12,13 +12,15 @@ function Home(){
   return (
     <AnimatePresence>
           <div className="example-container">
-            <div className='home_button'>
+            <motion.div layout className='home_button'>
             <motion.button
+            
             style={{
               borderRadius: 90,
               boxShadow: '0px 0px 15px black',
               borderStyle: 'none',
-              margin: '0 auto'
+              margin: '0 auto',
+              cursor: 'pointer'
             }}
               whileHover={{ 
                 scale: animate? null: 1.4,
@@ -32,7 +34,10 @@ function Home(){
               animate={{
                 // y: animate? '-30vh': 0,
                 // opacity: animate? '0.5' : 1,
-                
+                overflowY: animate? 'scroll': null,
+                overflowX: 'none',
+                minHeight: animate? '100vh': 150,
+                height: animate?'auto': null,
                 height: animate? '100vh' : 150,
                 width: animate? '100vw' : 150,
                 backgroundColor: animate?  'rgba(0, 0, 0, 0.5)': 'white',
@@ -47,10 +52,11 @@ function Home(){
               onClick={() => setAnimate(animate => !animate)}
               >
               
-              <motion.img src="2.png" style={{
+              <motion.img src="2.png" 
+              layout
+              style={{
                 height: 130,
                 width:130,
-        
               }}
               animate={{
                  y: animate? '-5vh': 0,
@@ -64,7 +70,13 @@ function Home(){
               }}alt="no" />
             
               <motion.h1
-               whileHover={{scale: 1.6, cursor: 'pointer'}}
+              
+              className='home_option'
+              style={{ 
+                backgroundImage: 'linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed)',
+                boxShadow: '0 4px 15px 0 rgba(65, 132, 234, 0.75)'}}
+               whileHover={{scale: 1.6, cursor: 'pointer', 
+               }}
               animate={{
                 display: animate? 'block': 'none',
                 opacity: animate? 1 : 0,
@@ -73,10 +85,19 @@ function Home(){
                   type: 'spring'
                 }
               }}
-              >sign in </motion.h1>
+              >💅 Sign In </motion.h1>
 
               <motion.h1
-               whileHover={{scale: 1.6, cursor: 'pointer'}}
+              className='home_option'
+              style={{  
+                backgroundImage: 'linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7)',
+                boxShadow: '0 4px 15px 0 rgba(116, 79, 168, 0.75)'
+              }}
+              whileHover={{
+                scale: 1.6, 
+                cursor: 'pointer',
+              }}
+               
               animate={{
                 display: animate? 'block': 'none',
                 opacity: animate? 1 : 0,
@@ -85,8 +106,14 @@ function Home(){
                   type: 'spring'
                 }
               }}
-              >sign up</motion.h1>
+              >🤩 Sign Up</motion.h1>
+
               <motion.h1
+              className='home_option'
+              style={{
+                backgroundImage: 'linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)',
+                boxShadow: '0 4px 15px 0 rgba(49, 196, 190, 0.75)'
+              }}
                whileHover={{scale: 1.6, cursor: 'pointer'}}
                animate={{
                 display: animate? 'block': 'none',
@@ -97,9 +124,17 @@ function Home(){
                 }
               }}
               onClick={()=>navigate('/landingpage')}
-              >check out the tea</motion.h1>
+              >🍵 The Tea</motion.h1>
+
               <motion.h1
-               whileHover={{scale: 1.6, cursor: 'pointer'}}
+               className='home_option'
+               style={{
+                backgroundImage: 'linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19)',
+                boxShadow: '0 4px 15px 0 rgba(229, 66, 10, 0.75)'
+                }}
+               whileHover={{
+                 scale: 1.6, 
+                 cursor: 'pointer'}}
               animate={{
                 display: animate? 'block': 'none',
                 opacity: animate? 1 : 0,
@@ -109,9 +144,9 @@ function Home(){
                 }
               }}
               onClick={()=>navigate('/swipe')}
-              >Daily swipe</motion.h1>
+              >👅 Daily Swipe</motion.h1>
             </motion.button>
-            </div>
+            </motion.div>
           </div>
    
       

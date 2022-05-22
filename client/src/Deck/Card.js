@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
-
+import './Card.css'
 function Card(){
     const [isOpen, setIsOpen] = useState(false)
     
@@ -21,19 +21,35 @@ function Card(){
         layout 
         style={{color:'white'}}
         onClick={(e)=>handleClick(e)}
+        className="card_container"
          >
-        <motion.h1  className="card_header" style={{backgroundColor: 'rgba(0,0,0,.5)'}}>This is where the character name go</motion.h1>
+        <motion.p  
+        layout 
+        className="card_header" 
+        style={{
+          marginTop: '20px',
+          height: '80px',
+          textAlign: 'center',
+          fontSize: '30px',
+          fontWieght: 'bold'
+        }}
+          >This is where the character name go</motion.p>
         
           
         
         {isOpen ? (
         <motion.div 
-         initial={{  opacity: 0 }}
-         animate={{ opacity: 1 }}
-         exit={{ opacity: 0 }}
+         initial={{  y:50, opacity: 0 }}
+         animate={{ y: 0, opacity: 1, 
+        transition: {
+          duration: 0.5,
+          type: 'spring'
+        }}}
+        
          className="info_about_character"
         >
           <p>hi im exposed</p>
+          <hr></hr>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </motion.div>
         ): null}  

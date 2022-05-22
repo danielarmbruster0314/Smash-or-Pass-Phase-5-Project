@@ -5,7 +5,7 @@ import StatCard from './StatCards'
 
 
 const food = [
-  {emoji:"🍅", hueA:340,hueB: 10},
+  {emoji:"🍅", url:'https://images-na.ssl-images-amazon.com/images/I/91lQppUeqGL.jpg'},
   {emoji:"🍊", hueA:20, hueB:40},
   {emoji:"🍋", hueA:60, hueB:90},
   {emoji:"🍐", hueA:80, hueB:120},
@@ -28,8 +28,8 @@ return(
            <h1>The Most Smashes</h1> 
 
     
-            {food.map(obj => (
-                <StatCard emoji={obj.emoji} hueA={obj.hueA} hueB={obj.hueB} key={obj.emoji} />
+            {food.map((obj,index) => (
+                <StatCard emoji={obj.emoji} url={obj.url} key={obj.emoji} index={index + 1}/>
             ))}
     
 
@@ -38,7 +38,7 @@ return(
 
     {food.map(obj => (
         
-                <StatCard emoji={obj.emoji} hueA={obj.hueA} hueB={obj.hueB} key={obj.emoji} />
+                <StatCard emoji={obj.emoji} url={obj.url} key={obj.emoji} />
             ))}
 
 
