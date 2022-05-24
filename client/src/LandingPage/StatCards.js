@@ -2,6 +2,8 @@ import "./StatCard.css";
 import {AnimatePresence, motion, Variants} from 'framer-motion/dist/framer-motion'
 import React, { useState } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import { Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 const cardVariants = {
   offscreen: {
     y: 300
@@ -22,10 +24,16 @@ const hue = (h) => `hsl(${h}, 100%, 50%)`;
 
 function StatCard({ emoji, url, index }) {
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate();
   return (
     <div className="card_page">
     <AnimatePresence>    
          <motion.div
+         
+        //  this is where we pass in the context of the character card they clicked
+           onClick={()=>navigate('/characterinfo',{state:{id:1,name:'sabaoon'}})}
+
+
            onHoverStart={e => {setIsOpen(true)}}
            onHoverEnd={e => {setIsOpen(false)}}
          className="card-container"

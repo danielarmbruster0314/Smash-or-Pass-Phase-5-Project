@@ -1,0 +1,13 @@
+.row {
+    width: 100%;
+    height: 8px;
+    background-color: #999;
+    border-radius: 10px;
+    margin-top: 12px;
+  }
+  
+
+  .related_comments{
+      justify-content: center;
+      display: block;
+  }

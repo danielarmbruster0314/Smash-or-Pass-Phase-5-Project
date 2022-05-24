@@ -126,7 +126,7 @@ export function AccountBox({props, signup}) {
     if(signup){
    setActive("signup")
     }
-  });
+  },[]);
 
 
   

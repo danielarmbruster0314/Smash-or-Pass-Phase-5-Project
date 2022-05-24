@@ -2,6 +2,10 @@ import './Characterpage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import {useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import Messages from './Messages';
+import {useLocation} from 'react-router-dom';
+import ProgressBar from 'react-bootstrap/ProgressBar'
 const data = [
     {
      image: 'https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg', 
@@ -23,7 +27,21 @@ const data = [
 
 
 function Characterpage(){
+    const location = useLocation();
 
+    //this is where we can break down the passed state from the navigation link
+    console.log(location.state)
+
+
+    const allIngredients = [
+        { icon: "😃", label: "Most Validated" },
+        { icon: "😖", label: "Most Invalidated" },
+        { icon: "👀", label: "Discover" }
+      ];
+    const [most, lettuce, cheese] = allIngredients;
+    const tabs = [most, lettuce, cheese];
+    
+    const [selectedTab, setSelectedTab] = useState(tabs[0]);
     const [index, setIndex] = useState(0);
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
@@ -35,23 +53,43 @@ function Characterpage(){
         <div className='characterpage_background'>
             <div className="characterpage">
                 <div className="characterinfo">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <ProgressBar style={{width: 'auto',height: '50px'}} >
+                        <ProgressBar  variant="success" now={35} key={1} label={'Smashed 35% '} />
+                        <ProgressBar  variant="danger" now={65} key={3} label={'passed 65% '}/>
+                    </ProgressBar>
+                    <div className="amount_of_smashes_or_passes">
+                        <p>what</p>
+                        <p>why</p>
+                    </div>
+
+
+
+
+
+                    {/* character bio will go here */}
+                    <h1>The Rundown</h1>
+                    <hr></hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </div>
                 <div className="characterimages">
                     <div className='character_image_container'>
 
-                    <Carousel activeIndex={index} onSelect={handleSelect}>
+                    <Carousel activeIndex={index} onSelect={handleSelect} interval={null} >
                             {data.map((slide, i) => {
                                 return (
                                 <Carousel.Item>        
                                 <img
+                                
                                 className="d-block w-100"
                                 src={slide.image}
                                 alt="slider image"
                                 />
                                 <Carousel.Caption>
-                                <h3>{slide.caption}</h3>
-                                <p>{slide.description}</p>
                                 </Carousel.Caption>
                             </Carousel.Item>
                                 )
@@ -62,6 +100,60 @@ function Characterpage(){
                 </div>
             </div>
             <div className="comments">
+
+                    <div className="window">
+                            <nav>
+                                <ul>
+                                {tabs.map((item, index) => (
+                                    <li
+                                    key={item.label}
+                                    className={item === selectedTab ? "selected" : ""}
+                                    onClick={() => {setSelectedTab(item)
+                                    console.log(item)
+                                    console.log(selectedTab)
+                                    }}
+                                    >
+                                    {`${item.icon} ${item.label}`}
+                                    {item === selectedTab ? (
+                                        <motion.div className="underline" layoutId="underline" />
+                                    ) : null}
+                                    </li>
+                                ))}
+                                </ul>
+                            </nav>
+                            <main>
+                                <AnimatePresence exitBeforeEnter>
+                                <motion.div
+                                    key={selectedTab ? selectedTab.label : "empty"}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    exit={{ opacity: 0, y: -20 }}
+                                    transition={{ duration: 0.15 }}
+                                >
+                                    {selectedTab ? (
+                                        <Messages />
+                                        // where to return the mapped assorted messages
+                                    ) : "😋"}
+                                </motion.div>
+                                </AnimatePresence>
+                            </main>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
 
             </div>
 
