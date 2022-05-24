@@ -1,14 +1,19 @@
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { AccountContext } from "../Accountforum/AccountContext";
+import React, { useContext } from "react";
 import "./Home.css"
 
 
 
 function Home(){
-  
   const [animate, setAnimate] = useState(false)
   const navigate = useNavigate();
+  
+
+
+
   return (
     <AnimatePresence>
           <div className="example-container">
@@ -36,7 +41,7 @@ function Home(){
                 // opacity: animate? '0.5' : 1,
                 overflowY: animate? 'scroll': null,
                 overflowX: 'none',
-                minHeight: animate? '100vh': 150,
+                minHeight: animate? '100vh': '150px',
                 height: animate?'auto': null,
                 height: animate? '100vh' : 150,
                 width: animate? '100vw' : 150,
@@ -64,7 +69,7 @@ function Home(){
                 height: animate? 400 : 130,
                 width: animate? 400 : 130,
                 transition: {
-                  delay: animate? 0.5 : 0,
+                  // delay: animate? 0.5 : 0,
                   type: 'spring'
                 }
               }}alt="no" />
@@ -85,6 +90,7 @@ function Home(){
                   type: 'spring'
                 }
               }}
+              onClick={()=>{navigate('/login')}}
               >💅 Sign In </motion.h1>
 
               <motion.h1
@@ -106,6 +112,7 @@ function Home(){
                   type: 'spring'
                 }
               }}
+              onClick={()=>{navigate('/signup',true)}}
               >🤩 Sign Up</motion.h1>
 
               <motion.h1

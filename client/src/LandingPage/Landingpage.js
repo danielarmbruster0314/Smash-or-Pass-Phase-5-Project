@@ -24,6 +24,7 @@ function Landingpage(){
 
     
 return(
+    <div className="landingpage_background">
     <div className="landingpage">
            <h1>The Most Smashes</h1> 
 
@@ -42,6 +43,7 @@ return(
             ))}
 
 
+    </div>
     </div>
 )}
 

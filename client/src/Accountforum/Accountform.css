@@ -1,0 +1,43 @@
+.accountforum{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./blob-scene-haikei-three.svg');
+   
+    aspect-ratio: 960/300;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.accountform_boxcontainer{
+    transform: scale(1.7);
+   
+   
+}
+
+.accountforum_backdrop{
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;}
+
+
+.spacer{
+    aspect-ratio: 960/300;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1{
+   
+    background-image: url('./blob-scene-haikei.svg');
+    
+}
+

@@ -40,7 +40,8 @@
     left: 0;
     right: 0px;
     top: 0;
-    clip-path: inset(37% 0% 14% 0% round 30px );
+    clip-path: inset(28% 0% 14% 0% round 30px );
+    /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/62/Starsinthesky.jpg'); */
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -74,4 +75,11 @@
 
 .card_stats > p{
   font-size: 20px;
+}
+
+
+@media only screen and (max-height: 850px) {
+  .splash {
+    clip-path: inset(37% 0% 14% 0% round 30px );
+  }
 }

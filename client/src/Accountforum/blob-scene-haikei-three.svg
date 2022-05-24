@@ -1,0 +1,34 @@
+<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<rect x="0" y="0" width="900" height="600" fill="#001220">
+</rect>
+<defs>
+
+ <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+
+<linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(51, 204, 51);stop-opacity:1" />
+    </linearGradient>
+
+<linearGradient id="grad1_0" x1="33.3%" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="#001220" stop-opacity="1">
+</stop><stop offset="80%" stop-color="#001220" stop-opacity="1">
+</stop></linearGradient>
+</defs>
+<defs>
+<linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%" y2="100%">
+<stop offset="20%" stop-color="#001220" stop-opacity="1">
+</stop>
+<stop offset="80%" stop-color="#001220" stop-opacity="1">
+</stop>
+</linearGradient>
+</defs>
+<g transform="translate(900, 0)">
+<path d="M0 486.7C-53 442.4 -106.1 398 -151.5 365.9C-197 333.7 -234.9 313.8 -289.2 289.2C-343.5 264.6 -414.1 235.3 -449.7 186.3C-485.3 137.3 -486 68.6 -486.7 0L0 0Z" fill="url(#grad1)">
+</path></g><g transform="translate(0, 600)">
+<path d="M0 -486.7C61.5 -478.6 123 -470.5 186.3 -449.7C249.6 -428.8 314.6 -395.3 342.2 -342.2C369.9 -289.2 360 -216.8 377.9 -156.5C395.7 -96.2 441.2 -48.1 486.7 0L0 0Z" fill="url(#grad2)">
+</path>
+</g>
+</svg>
