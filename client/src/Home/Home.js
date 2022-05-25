@@ -131,7 +131,7 @@ function Home(){
                 }
               }}
               onClick={()=>navigate('/landingpage')}
-              >🍵 The Tea</motion.h1>
+              ><span style={{fontSize: '45px'}}>🧋</span> The Tea</motion.h1>
 
               <motion.h1
                className='home_option'

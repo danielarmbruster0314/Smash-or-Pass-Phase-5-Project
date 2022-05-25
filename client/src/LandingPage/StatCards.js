@@ -22,7 +22,7 @@ const hue = (h) => `hsl(${h}, 100%, 50%)`;
 
 
 
-function StatCard({ emoji, url, index }) {
+function StatCard({ emoji, url, index, name }) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate();
   return (
@@ -42,7 +42,7 @@ function StatCard({ emoji, url, index }) {
         //  viewport={{ once: true, amount: 0.8 }}
          >
             <div className="splash"  />
-            <motion.div className="card"   whileHover={{scale: 1.14, }}variants={cardVariants} style={{backgroundImage: `url(${url}) `}}>
+            <motion.div className="card"   whileHover={{scale: 1.14, }}variants={cardVariants} style={{backgroundImage: `url(${url}) `, backgroundPosition: 'center', borderRadius: '20px'}}>
               {isOpen? (
               <motion.div
               className='card_stats'
@@ -59,7 +59,7 @@ function StatCard({ emoji, url, index }) {
                 <ProgressBar  variant="success" now={35} key={1} label={'Smashed 35%'}/>
                 <ProgressBar  variant="danger" now={65} key={3} label={'passed 65%'}/>
               </ProgressBar>
-                <p> #{index} Name: naruto</p>
+                <p> #{index} Name: {name}</p>
                 </motion.div>
                 ):null}
                 {/* <motion.h6>character name</motion.h6> */}

@@ -1,11 +1,13 @@
 import './Characterpage.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import Messages from './Messages';
 import {useLocation} from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar'
+import Navigation from "../Navigation/Navigation";
+
 const data = [
     {
      image: 'https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg', 
@@ -25,18 +27,27 @@ const data = [
   ]
   
 
+  
+
+
+
 
 function Characterpage(){
     const location = useLocation();
+
+    
+
+
+
 
     //this is where we can break down the passed state from the navigation link
     console.log(location.state)
 
 
     const allIngredients = [
-        { icon: "😃", label: "Most Validated" },
-        { icon: "😖", label: "Most Invalidated" },
-        { icon: "👀", label: "Discover" }
+        { id: 0, icon: "😃", label: "Most Validated" },
+        { id: 1,icon: "😖", label: "Most Invalidated" },
+        { id: 2,icon: "👀", label: "Discover" }
       ];
     const [most, lettuce, cheese] = allIngredients;
     const tabs = [most, lettuce, cheese];
@@ -47,10 +58,16 @@ function Characterpage(){
       setIndex(selectedIndex);
     };
 
-
+   console.log(selectedTab)
 
     return(
+    <>
+    <div style={{position: 'fixed',
+zIndex: '5'}}>
+    <Navigation />
+    </div>
         <div className='characterpage_background'>
+            
             <div className="characterpage">
                 <div className="characterinfo">
 
@@ -103,25 +120,26 @@ function Characterpage(){
 
                     <div className="window">
                             <nav>
-                                <ul>
+                                <ul className='ul_items'>
                                 {tabs.map((item, index) => (
                                     <li
+                                    id='List_items'
                                     key={item.label}
-                                    className={item === selectedTab ? "selected" : ""}
+                                    className={item.id === selectedTab.id ? "selected" : ""}
                                     onClick={() => {setSelectedTab(item)
                                     console.log(item)
                                     console.log(selectedTab)
                                     }}
                                     >
                                     {`${item.icon} ${item.label}`}
-                                    {item === selectedTab ? (
+                                    {item.id === selectedTab.id ? (
                                         <motion.div className="underline" layoutId="underline" />
                                     ) : null}
                                     </li>
                                 ))}
                                 </ul>
                             </nav>
-                            <main>
+                            <main className='main'>
                                 <AnimatePresence exitBeforeEnter>
                                 <motion.div
                                     key={selectedTab ? selectedTab.label : "empty"}
@@ -130,6 +148,9 @@ function Characterpage(){
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.15 }}
                                 >
+                                    <motion.forum>
+                                        <motion.input typ='textarea' placeholder="Add to the Disccusion, Wheter It be Advocating for this characters attractivness or personality or Critique the consensus"/>
+                                     </motion.forum>
                                     {selectedTab ? (
                                         <Messages />
                                         // where to return the mapped assorted messages
@@ -158,7 +179,7 @@ function Characterpage(){
             </div>
 
         </div>
-    
+    </>
         )}
 
 

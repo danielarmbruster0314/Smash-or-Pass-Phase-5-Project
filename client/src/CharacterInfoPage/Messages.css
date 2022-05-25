@@ -12,7 +12,14 @@
   background: white;
   padding: 20px;
   border-radius: 25px;
-  margin-top: 50px;
+  margin-top: 60px;
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style: none;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
 }
 
 .messages_li {
@@ -29,20 +36,14 @@
   margin-bottom: 0px;
 }
 
-.avatar {
+/* .avatar {
   width: 40px;
   height: 40px;
   background-color: #666;
   border-radius: 20px;
-}
-
-/* .row {
-  width: 100%;
-  height: 8px;
-  background-color: #999;
-  border-radius: 10px;
-  margin-top: 12px;
 } */
+
+
 
 .messages_li::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
@@ -51,4 +52,14 @@
 .messages_li{
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
     scrollbar-width: none; /* for Firefox */
+}
+
+.message_container{
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.message_text{
+  margin-top: 5px;
 }
