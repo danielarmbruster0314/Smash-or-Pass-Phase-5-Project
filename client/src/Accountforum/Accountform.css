@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('./blob-scene-haikei-three.svg');
-   
+    /* background-image: url('./blob-scene-haikei-three.svg'); */
+   background-color: #212121;
     aspect-ratio: 960/300;
     width: 100vw;
     height: 100vh;

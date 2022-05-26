@@ -20,15 +20,23 @@ export const MutedLink = styled.a`
   color: rgba(200, 200, 200, 0.8);
   font-weight: 500;
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: rgba(200, 200, 200, 0.8);
+  }
 `;
 
 export const BoldLink = styled.a`
   font-size: 11px;
-  color: rgb(241, 196, 15);
+  color: 	RGB(255, 0, 255, 0.7);
   font-weight: 500;
   text-decoration: none;
   margin: 0 4px;
-  
+  &:hover {
+    color: RGB(255, 0, 255, 0.7);
+  text-shadow: 0 5px 15px rgba(241, 196, 15 .4);
+  text-decoration: underline;
+  }
 `;
 
 export const Input = styled.input`
@@ -49,7 +57,7 @@ export const Input = styled.input`
   }
   &:focus {
     outline: none;
-    border-bottom: 2px solid rgb(241, 196, 15);
+    border-bottom: 2px solid RGB(255, 0, 255, 0.7);
   }
 `;
 

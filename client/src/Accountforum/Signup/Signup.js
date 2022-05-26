@@ -16,7 +16,7 @@ export function SignupForm(props) {
   return (
     <BoxContainer>
       <FormContainer>
-        <Input type="text" placeholder="Full Name" />
+        <Input type="text" placeholder="Username" />
         <Input type="email" placeholder="Email" />
         <Input type="password" placeholder="Password" />
         <Input type="password" placeholder="Confirm Password" />
@@ -24,9 +24,9 @@ export function SignupForm(props) {
       <Marginer direction="vertical" margin={10} />
       <SubmitButton className='signup_button' type="submit">Signup</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink href="#">
+      <MutedLink href="#" style={{paddingBottom: '10px'}}>
         Already have an account?
-        <BoldLink href="#" onClick={switchToSignin}>
+        <BoldLink href="#" onClick={switchToSignin} >
           Signin
         </BoldLink>
       </MutedLink>

@@ -61,7 +61,7 @@
 }
 
 .characterpage_background{
-    background-color: black;
+    background-color: #212121;
     height: 100%;
     width: 100%;
 }
@@ -122,6 +122,8 @@
     width: 100%;
     /* margin-left: -50px; */
   }
+
+ 
   
   .tabs {
     flex-grow: 1;
@@ -168,7 +170,7 @@
     cursor: pointer;
     height: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     align-items: center;
     flex: 1;
@@ -176,6 +178,7 @@
     position: relative;
     user-select: none;
     width: 250px;
+    align-content: center;
   }
   
   .underline {
@@ -251,4 +254,23 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 0px 20px;
+}
+
+
+.input_bar_for_thought{
+  padding: 0 10px;
+  font-size: 35px;
+  width: 40em;
+  height: 400px;
+ background-color: #212121;
+ color: white;
+ border-radius: 20px;
+ resize: none;
+}
+
+.input_container{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
 }

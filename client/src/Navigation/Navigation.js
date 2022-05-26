@@ -7,9 +7,27 @@ import { Popup } from 'semantic-ui-react'
 import Avatar from '@mui/material/Avatar';
 import { textAlign } from '@mui/system';
 
-function Navigation({user}){
+function Navigation({user,setUser}){
     const [animate, setAnimate] = useState(false)
     const navigate = useNavigate();
+
+
+    function hadnleLogout(){
+        fetch("/logout", { method: "DELETE" })
+        .then((r) => {
+            if (r.ok) {
+              setUser(null);
+              navigate('/logout')
+            }
+          });
+    }
+
+
+
+
+
+
+
 return(
     <AnimatePresence>
         <div className="nav_container">
@@ -82,7 +100,7 @@ return(
                          width: '100%',
                          margin: '0 auto'
                         }}
-                    src="/broken-image.jpg" 
+                    src={user?.image}
                     
                     />
                     </motion.div>
@@ -243,7 +261,7 @@ return(
                     }
                     }}
 
-                    onClick={()=>navigate('/swipe')}
+                    onClick={()=>hadnleLogout()}
         >✌</motion.h1>
             } />
             

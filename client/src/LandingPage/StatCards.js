@@ -22,7 +22,7 @@ const hue = (h) => `hsl(${h}, 100%, 50%)`;
 
 
 
-function StatCard({ emoji, url, index, name }) {
+function StatCard({ image, name, index, character }) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate();
   return (
@@ -31,7 +31,7 @@ function StatCard({ emoji, url, index, name }) {
          <motion.div
          
         //  this is where we pass in the context of the character card they clicked
-           onClick={()=>navigate('/characterinfo',{state:{id:1,name:'sabaoon'}})}
+           onClick={()=>navigate('/characterinfo',{state: character})}
 
 
            onHoverStart={e => {setIsOpen(true)}}
@@ -42,7 +42,7 @@ function StatCard({ emoji, url, index, name }) {
         //  viewport={{ once: true, amount: 0.8 }}
          >
             <div className="splash"  />
-            <motion.div className="card"   whileHover={{scale: 1.14, }}variants={cardVariants} style={{backgroundImage: `url(${url}) `, backgroundPosition: 'center', borderRadius: '20px'}}>
+            <motion.div className="card"   whileHover={{scale: 1.14, }}variants={cardVariants} style={{backgroundImage: `url(${image}) `, backgroundPosition: 'center', borderRadius: '20px'}}>
               {isOpen? (
               <motion.div
               className='card_stats'
@@ -59,7 +59,7 @@ function StatCard({ emoji, url, index, name }) {
                 <ProgressBar  variant="success" now={35} key={1} label={'Smashed 35%'}/>
                 <ProgressBar  variant="danger" now={65} key={3} label={'passed 65%'}/>
               </ProgressBar>
-                <p> #{index} Name: {name}</p>
+                <p> #{index}  <span style={{fontFamily: 'Fredoka One'}}>{name}</span></p>
                 </motion.div>
                 ):null}
                 {/* <motion.h6>character name</motion.h6> */}

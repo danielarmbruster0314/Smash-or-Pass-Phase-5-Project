@@ -7,6 +7,7 @@ import Messages from './Messages';
 import {useLocation} from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Navigation from "../Navigation/Navigation";
+import { border, borderRadius } from '@mui/system';
 
 const data = [
     {
@@ -32,9 +33,9 @@ const data = [
 
 
 
-function Characterpage(){
+function Characterpage({user,setUser}){
     const location = useLocation();
-
+    const[openInput ,setOpenInput] = useState(false)
     
 
 
@@ -64,7 +65,7 @@ function Characterpage(){
     <>
     <div style={{position: 'fixed',
 zIndex: '5'}}>
-    <Navigation />
+    <Navigation user={user} setUser={setUser}/>
     </div>
         <div className='characterpage_background'>
             
@@ -86,32 +87,46 @@ zIndex: '5'}}>
 
                     {/* character bio will go here */}
                     <h1>The Rundown</h1>
+                    <h2 style={{textAlign:'center'}}>{location.state.name}</h2>
                     <hr></hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p>{location.state.bio}
                     </p>
                 </div>
                 <div className="characterimages">
                     <div className='character_image_container'>
 
                     <Carousel activeIndex={index} onSelect={handleSelect} interval={null} >
-                            {data.map((slide, i) => {
-                                return (
+                            
                                 <Carousel.Item>        
                                 <img
                                 
                                 className="d-block w-100"
-                                src={slide.image}
+                                src={location.state.slide_image_1}
                                 alt="slider image"
                                 />
                                 <Carousel.Caption>
                                 </Carousel.Caption>
                             </Carousel.Item>
-                                )
-                            })}
-                            
+                            <Carousel.Item>        
+                                <img
+                                
+                                className="d-block w-100"
+                                src={location.state.slide_image_2}
+                                alt="slider image"
+                                />
+                                <Carousel.Caption>
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>        
+                                <img
+                                
+                                className="d-block w-100"
+                                src={location.state.slide_image_3}
+                                alt="slider image"
+                                />
+                                <Carousel.Caption>
+                                </Carousel.Caption>
+                            </Carousel.Item>
                             </Carousel>
                     </div>
                 </div>
@@ -148,9 +163,66 @@ zIndex: '5'}}>
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.15 }}
                                 >
-                                    <motion.forum>
-                                        <motion.input typ='textarea' placeholder="Add to the Disccusion, Wheter It be Advocating for this characters attractivness or personality or Critique the consensus"/>
-                                     </motion.forum>
+                                    <motion.div 
+                                    layout 
+                                    className='input_container'
+                                    style={{margin:'40px auto', cursor: 'pointer'}}
+                                    initial={{
+                                        height:90,
+                                        width:90
+                                    }}
+                                    animate={{
+                                        overflowY: openInput? 'hidden': null,
+                                        overflowX: 'none',
+                                        height: openInput? 400 : 90 ,
+                                       width: openInput? '100%': 90 ,
+                                       backgroundColor: openInput?  'white': 'rgb(0,0,0,.5)',
+                                       color: openInput? 'white' : 'black',
+                                       borderRadius: openInput? null : '90px'
+                                       }}
+                   
+                                       transition={{
+                                       duration: 2,
+                                       type: 'spring',
+                                       ease: "easeInOut",
+                                       }}
+                   
+                                       onClick={() => setOpenInput(true)}
+                                       onDoubleClick={()=> setOpenInput(false)}
+                                    
+                                    >
+                                        <motion.span
+                                        style={{
+                                            fontSize: '30px',
+                                            position: 'relative',
+                                            top: '-95px',
+                                            color: 'transparent', 
+                                            textShadow: '0 0 0 white'
+
+                                        }}
+                                        animate={{
+                                            display: openInput? 'none' : 'inline', 
+                                            opacity: openInput? 0 : 1,
+                                        }}
+                                        transition={{
+                                            duration: 2,
+                                            type: 'spring',
+                                            ease: "easeInOut",
+                                            delay: openInput? null: 0.7
+                                            }}
+                                        >➕</motion.span>
+                                        <motion.forum animate={{
+                                            display: openInput? 'inline-block': 'none'
+
+                                        }}>
+                                            <motion.textarea
+                                                 className="input_bar_for_thought"
+                                                 style={{color: 'white', padding: '15px'}}
+                                                 typ='textarea' 
+                                                 placeholder="Add to the disccusion, whether it be advocating for this characters attractiveness or personality or critique the consensus"/>
+                                         </motion.forum>
+                                     </motion.div>
+
                                     {selectedTab ? (
                                         <Messages />
                                         // where to return the mapped assorted messages

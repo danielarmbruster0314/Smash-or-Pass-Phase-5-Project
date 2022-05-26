@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   BoldLink,
   BoxContainer,
@@ -10,19 +10,45 @@ import {
 import { Marginer } from "../Marginer";
 import { AccountContext } from "../AccountContext";
 import './Login.css';
-export function LoginForm(props) {
+import { useNavigate } from 'react-router-dom';
+
+
+
+export function LoginForm({setUser}) {
   const { switchToSignup } = useContext(AccountContext);
+  const[username, setUserName] = useState(null)
+  const [password, setPassword] = useState(null)
+  const navigate = useNavigate();
+
+function handleSubmit(e){
+	e.preventDefault();
+		fetch("/login", {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ username, password }),
+		})
+		.then((r) => {
+			if (r.ok){
+				r.json().then((user) => setUser(user))
+				navigate('/landingpage')
+			}else{
+				r.json().then((error)=> console.log(error) )
+			}
+		})
+}
 
   return (
     <BoxContainer>
       <FormContainer>
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Password" />
+        <Input type="username" placeholder="Username" onChange={(e)=>setUserName(e.target.value)} />
+        <Input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
       <Marginer direction="vertical" margin="1.6em" />
-      <SubmitButton className="login_button" type="submit">Signin</SubmitButton>
+      <SubmitButton className="login_button" type="submit" onClick={(e)=>handleSubmit(e)}>Signin</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Don't have an accoun?{" "}

@@ -23,7 +23,7 @@ function Messages(){
         const toggleOpen = () => setIsOpen(!isOpen);
       
         return (
-          <motion.div className="messages_li" style={{}} layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+          <motion.div className="messages_li" style={{}} layout onClick={()=>setIsOpen(true)} onDoubleClick={()=>setIsOpen(false)}  initial={{ borderRadius: 10 }}>
             <motion.div className="avatar" layout />
             <motion.div className='message_container'>
             <Avatar />

@@ -94,7 +94,7 @@ const expandingTransition = {
   stiffness: 30,
 };
 
-export function AccountBox({props, signup}) {
+export function AccountBox({setUser, signup}) {
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
 
@@ -177,8 +177,8 @@ export function AccountBox({props, signup}) {
           )}
         </TopContainer>
         <InnerContainer>
-          {active === "signin" && <LoginForm />}
-          {active === "signup" && <SignupForm />}
+          {active === "signin" && <LoginForm setUser={setUser}/>}
+          {active === "signup" && <SignupForm setUser={setUser}/>}
         </InnerContainer>
       </BoxContainer>
       </div>

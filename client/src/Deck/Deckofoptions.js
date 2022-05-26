@@ -29,7 +29,7 @@ const from = i => ({ x: 0, rot: 0, scale: 1.5, y: -1000 })
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) => `perspective(1500px) rotateX(10deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-function Deck() {
+function Deck({user, setUser}) {
 
 
 
@@ -86,7 +86,7 @@ function handleToggle(e,index,down){
     <div style={{position: 'fixed',
     zIndex: '5',
   }}>
-      <Navigation />
+      <Navigation user={user} setUser={setUser}/>
     </div>
     <div className='deckofcards'>
    
