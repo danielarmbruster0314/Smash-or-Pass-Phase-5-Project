@@ -6,7 +6,8 @@ margin-top: auto;
 text-align: center;
 padding: 5px;
 border-radius: 20px;
-box-shadow: 0px 0px 10px black
+box-shadow: 0px 0px 10px black;
+font-size: 20px;
 }
 
 .card_header{
@@ -15,7 +16,7 @@ box-shadow: 0px 0px 10px black
     color: white;
     font-family:'Koulen' ;
     background-color: rgba(0,0,0,0.7);
-    
+    height: 50px;
     
 }
 
@@ -26,4 +27,5 @@ box-shadow: 0px 0px 10px black
     overflow: hidden;
     height: 100%;
     cursor: pointer;
+   
 }

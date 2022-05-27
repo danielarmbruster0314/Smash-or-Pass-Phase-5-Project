@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import './Card.css'
-function Card(){
+function Card({card}){
     const [isOpen, setIsOpen] = useState(false)
-    
 
     function handleClick(e){
         if(isOpen === true){
             setIsOpen(false)
           }else if(e.detail === 2){
             setIsOpen(!isOpen)
-            console.log('hi')
           }
           
     }
@@ -30,10 +28,11 @@ function Card(){
           marginTop: '20px',
           height: '80px',
           textAlign: 'center',
-          fontSize: '30px',
-          fontWieght: 'bold'
+          fontSize: '40px',
+          fontWieght: 'bold',
+          padding: '12.5px 0px'
         }}
-          >This is where the character name go</motion.p>
+          >{card?.name}</motion.p>
         
           
         
@@ -48,9 +47,9 @@ function Card(){
         
          className="info_about_character"
         >
-          <p>hi im exposed</p>
+          <p style={{fontWeight: 'bold'}}>{card?.origin}</p>
           <hr></hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p style={{paddingBottom: '40px'}}>{card?.role}</p>
         </motion.div>
         ): null}  
         

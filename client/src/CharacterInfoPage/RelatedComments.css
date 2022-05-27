@@ -10,4 +10,8 @@
   .related_comments{
       justify-content: center;
       display: block;
+      padding: 30px;
+      border: solid darkgray;
+      border-radius: 15px;
+      margin: 5px 0px;
   }

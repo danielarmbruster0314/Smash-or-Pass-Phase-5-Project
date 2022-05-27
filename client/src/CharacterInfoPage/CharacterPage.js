@@ -224,7 +224,7 @@ zIndex: '5'}}>
                                      </motion.div>
 
                                     {selectedTab ? (
-                                        <Messages />
+                                        <Messages posts={location.state.thoughts}/>
                                         // where to return the mapped assorted messages
                                     ) : "😋"}
                                 </motion.div>

@@ -6,25 +6,72 @@ import Avatar from '@mui/material/Avatar';
 import { positions } from '@mui/system';
 
 const items = [0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14,15];
-function Messages(){
+function Messages({posts}){
+
+
     return (
         <AnimateSharedLayout>
           <motion.ul className="messages_ul" layout initial={{ borderRadius: 25 }}>
-            {items.map(item => (
-              <Item key={item} />
+            {posts.map(post => (
+              <Item key={post.id} content={post.content} postid={post.id}/>
             ))}
           </motion.ul>
         </AnimateSharedLayout>
       );
     }
 
-    function Item() {
+
+
+
+
+
+
+
+
+
+
+
+    function Item({content, postid}) {
         const [isOpen, setIsOpen] = useState(false);
-      
+        let [text , setText] = useState('')
+
+
+        let swear = [
+          'chink',
+          'nigger',
+          'niger',
+          'nigg3r',
+          'fag',
+          'faggot',
+          'cunt',
+          'bollocks',
+          'bugger',
+          'bullshit',
+          'crap',
+          'damn',
+          'frigger',
+          ]
+        
+        function handleSubmit(e){
+          if(e.keyCode == 13 && e.shiftKey == false){
+          e.preventDefault();
+          const foundSwears = swear.filter(word => text.toLowerCase().includes(word.toLowerCase()));
+          if(foundSwears.length){
+            alert(`we do not allow these words in messages or posts   (${foundSwears})`);
+             } else if (text.length){
+            console.log('No bad word found');
+           }
+          }
+        }
+
+
+
+
+
         const toggleOpen = () => setIsOpen(!isOpen);
       
         return (
-          <motion.div className="messages_li" style={{}} layout onClick={()=>setIsOpen(true)} onDoubleClick={()=>setIsOpen(false)}  initial={{ borderRadius: 10 }}>
+          <motion.div className="messages_li" style={{}} layout    initial={{ borderRadius: 10 }}>
             <motion.div className="avatar" layout />
             <motion.div className='message_container'>
             <div style={{
@@ -38,11 +85,19 @@ function Messages(){
               position: 'absolute',
               top: '-27px',
               right: '155px',
-              border: 'none'
+              border: 'none',
+              opacity: .8
             }}
+            whileHover={{ 
+              scale: 1.1,
+              boxShadow: 'none',
+              opacity: 1
+              }}
+
             
             >🥵 Validate</motion.button>
             <motion.button
+            className="invalidate_button"
             style={{
               borderRadius: '10px',
               backgroundColor: 'green',
@@ -50,14 +105,23 @@ function Messages(){
               position: 'absolute',
               top: '-27px',
               right: '0px',
-              border: 'none'
+              border: 'none',
+              opacity: .8
             }}
+            whileHover={{ 
+              scale: 1.1,
+              boxShadow: 'none',
+              opacity: 1
+              }}
             
             
             >🥶 Invalidate</motion.button>
             </div>
             <Avatar />
-            <motion.p className="message_text">hello jhfsjdfajkshfkasfksdhjfaksfkasjdf asjdfhasjkhfkasdhfj asjdlfhajksdfhkjasdhfk asjkldfhajksdhfkjsdhfk jksfhkasdhfkjsd kjhsdfkjahdkjfh  sdfhaiusdfuaisdfbas aisdfuhasidfhuasdfi aisdghfiuasdfhuiashf aisdufhiaushfuiashif asdhfuiashfuashdi aisudhfiuashfiuasdhf iasdhfiuahsdfuihasd idhfiuashdfuihd </motion.p>
+            <motion.p 
+            className="message_text" 
+            onClick={()=>setIsOpen(!isOpen)}>
+              {content}</motion.p>
             </motion.div>
             
             <AnimatePresence>
@@ -65,9 +129,17 @@ function Messages(){
               {isOpen ? ( 
                 <>
               <RelatedComments />
-              <motion.forum>
-                <motion.textarea typ='textarea' placeholder="Elaborate on this topic..."/>
-              </motion.forum></>): null}
+              <motion.form >
+                <motion.textarea 
+                className='related_comment_input' 
+                type='text' 
+                onKeyDown={(e)=>handleSubmit(e)} 
+                onChange={e => setText(e.target.value) }
+                value={text}
+                placeholder="Elaborate on this topic..."/>
+                <button style={{display:'none'}} type="submit">Send</button>
+              </motion.form>
+              </>): null}
               </motion.div>
               
             </AnimatePresence>
