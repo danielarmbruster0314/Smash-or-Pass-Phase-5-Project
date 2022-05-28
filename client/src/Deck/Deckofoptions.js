@@ -2,7 +2,7 @@ import { render } from 'react-dom'
 import React, { useState, useEffect } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import {AnimatePresence, motion,} from 'framer-motion/dist/framer-motion'
 import Card from './Card'
 import './DeckofOptions.css'
 import Navigation from '../Navigation/Navigation'
@@ -18,6 +18,16 @@ const trans = (r, s) => `perspective(1500px) rotateX(10deg) rotateY(${r / 10}deg
 function Deck({user, setUser}) {
   const [cards, setCards] = useState([])
   const [count, setCount] = useState(0)
+  
+  const background =  [
+    "linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%)",
+    "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+    "linear-gradient(180deg, rgb(230, 255, 0) 0%, rgb(3, 209, 0) 100%)"
+  ];
+  
+
+
+
   useEffect(() => {
     // Update the document title using the browser API
     fetch("/characters")
@@ -133,6 +143,8 @@ function handleToggle(e,index,down){
     const dir = xDir < 0 ? -1 : 1 
     // Direction should either point left or right
     //this shows the direction somone is seding the card 1 is to the right -1 is to the left
+    // if (!down && dir === 1) 
+    // if(trigger) 
     if (!down && trigger) gone.add(index)
     // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
     if (!down && trigger && dir === -1) handleLeft(index)
@@ -156,8 +168,13 @@ function handleToggle(e,index,down){
   }}>
       <Navigation user={user} setUser={setUser}/>
     </div>
-    <div className='deckofcards'>
-   
+    <motion.div 
+    style={{}}
+  
+    
+    className='deckofcards'
+    >
+    
     {props.map(({ x, y, rot, scale }, i) => (
     <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
@@ -172,11 +189,15 @@ function handleToggle(e,index,down){
       
       
       }} >
+       <motion.div
+       >
       <Card card={cards[i]}/>
+      </motion.div>
       </animated.div>
     </animated.div>
+    
   ))}
-  </div>
+  </motion.div>
   </>
 )}
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import {AnimatePresence, motion,useMotionValue, useTransform } from 'framer-motion/dist/framer-motion'
 import './Card.css'
 function Card({card}){
     const [isOpen, setIsOpen] = useState(false)
@@ -14,6 +14,7 @@ function Card({card}){
     }
     return(
         <AnimatePresence>
+          
         <motion.div 
         transition={{ layout: { duration: 1, type:'spring'}}}
         layout 
