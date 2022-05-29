@@ -7,7 +7,7 @@ import Messages from './Messages';
 import {useLocation} from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Navigation from "../Navigation/Navigation";
-import { border, borderRadius } from '@mui/system';
+import { border, borderRadius, height } from '@mui/system';
 
 const data = [
     {
@@ -36,8 +36,10 @@ const data = [
 function Characterpage({user,setUser}){
     const location = useLocation();
     const[openInput ,setOpenInput] = useState(false)
-    
-
+    const [postInput, setPostInput] = useState(null)
+    const [mostValidated, setMostValidated] = useState(null)
+    const [mostInValidated, setMostInValidated] = useState(null)
+    const [discover, setDiscover] = useState(null) 
 
 
 
@@ -46,9 +48,9 @@ function Characterpage({user,setUser}){
 
 
     const allIngredients = [
-        { id: 0, icon: "😃", label: "Most Validated" },
-        { id: 1,icon: "😖", label: "Most Invalidated" },
-        { id: 2,icon: "👀", label: "Discover" }
+        { id: 0, icon: "😃", label: "Most Validated", posts:mostValidated },
+        { id: 1,icon: "😖", label: "Most Invalidated" ,posts:mostInValidated},
+        { id: 2,icon: "👀", label: "Discover", posts:discover }
       ];
     const [most, lettuce, cheese] = allIngredients;
     const tabs = [most, lettuce, cheese];
@@ -59,8 +61,18 @@ function Characterpage({user,setUser}){
       setIndex(selectedIndex);
     };
 
-   console.log(selectedTab)
 
+    function handleOpen(){
+        setOpenInput(true)
+    }
+
+    function handleClose(){
+        setOpenInput(false)
+    }
+
+
+   console.log(selectedTab)
+    
     return(
     <>
     <div style={{position: 'fixed',
@@ -174,31 +186,31 @@ zIndex: '5'}}>
                                     animate={{
                                         overflowY: openInput? 'hidden': null,
                                         overflowX: 'none',
-                                        height: openInput? 400 : 90 ,
-                                       width: openInput? '100%': 90 ,
+                                        width: openInput? '100%': 90 ,
+                                        height: openInput? 600 : 90 ,
+                                       
                                        backgroundColor: openInput?  'white': 'rgb(0,0,0,.5)',
                                        color: openInput? 'white' : 'black',
                                        borderRadius: openInput? null : '90px'
                                        }}
                    
                                        transition={{
-                                       duration: 2,
+                                       duration: openInput? .5 : 2,
                                        type: 'spring',
                                        ease: "easeInOut",
                                        }}
-                   
-                                       onClick={() => setOpenInput(true)}
-                                       onDoubleClick={()=> setOpenInput(false)}
                                     
                                     >
                                         <motion.span
+                                        onClick={() => handleOpen()}
                                         style={{
                                             fontSize: '30px',
                                             position: 'relative',
                                             top: '-95px',
                                             color: 'transparent', 
-                                            textShadow: '0 0 0 white'
-
+                                            textShadow: '0 0 0 white',
+                                            width: '90px',
+                                            height: '90px'
                                         }}
                                         animate={{
                                             display: openInput? 'none' : 'inline', 
@@ -211,15 +223,59 @@ zIndex: '5'}}>
                                             delay: openInput? null: 0.7
                                             }}
                                         >➕</motion.span>
-                                        <motion.forum animate={{
-                                            display: openInput? 'inline-block': 'none'
-
-                                        }}>
+                                        <motion.forum 
+                                        layout
+                                        animate={{
+                                            display: openInput? 'inline-block': 'none'     
+                                        }}
+                                     
+                                        >
                                             <motion.textarea
+                                            initial={{
+                                                opacity: 0,
+                                                width: '90px',
+                                                height: '90px'
+                                            }}
+                                            animate={{
+                                                opacity: openInput? 1 : 0,
+                                                width: openInput? '80vw' : 0,
+                                                height: openInput? '400px' : 0
+                                            }}
+                                            transition={{
+                                                delay: .7,
+                                                ease: 'easeIn'
+                                            }}
+                                            layout
+                                            onChange={(e)=> setPostInput(e.target.value)}
                                                  className="input_bar_for_thought"
                                                  style={{color: 'white', padding: '15px'}}
                                                  typ='textarea' 
                                                  placeholder="Add to the disccusion, whether it be advocating for this characters attractiveness or personality or critique the consensus"/>
+                                                 <motion.div className='form_buttons'
+                                                 initial={{
+                                                     opacity: 0
+                                                 }}
+                                                 animate={{
+                                                     opacity: openInput? 1: 0
+                                                 }}
+                                                 transition={{
+                                                     duration: openInput? .5 : 0
+                                                 }}>
+                                                    <motion.button 
+                                                    
+                                                    onClick={() => handleClose()}>
+                                                     ❌
+                                                    </motion.button>
+                                                    <motion.button 
+
+                                                    style={{
+                                                        fontSize: '30px',
+                                                        color: 'transparent',  
+                                                        textShadow: '0 0 0 green'
+                                                        }}>
+                                                    ✔️
+                                                    </motion.button>
+                                                 </motion.div>
                                          </motion.forum>
                                      </motion.div>
 

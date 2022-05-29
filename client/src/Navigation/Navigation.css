@@ -1,3 +1,17 @@
 .nav_container{
     z-index: 5;
 }
+
+.home_option_nav{
+    font-family: 'Fredoka One';
+    border-radius: 50px;
+    font-size: 40px;
+    background-size: 300% 100%;
+    width: 40vw;
+    margin: 10px  auto;
+  
+  }
+
+  .home_option_nav:hover{
+    animation: gradient 2s ease 
+  }

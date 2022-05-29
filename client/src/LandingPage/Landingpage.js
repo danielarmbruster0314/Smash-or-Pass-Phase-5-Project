@@ -26,7 +26,9 @@ const[topSmashes, setTopSmashes] = useState(null)
     
 return(
     <div className="landingpage_background">
+        <div className='navbar'>
         <Navigation user={user} setUser={setUser}/>
+        </div>
     <div className="landingpage">
            <h1 style={{fontFamily: 'Fredoka One', marginTop: '30px', fontSize: '50px', backgroundColor: 'green', borderRadius: '0px 0px 20px 20px'}}>The Most Smashes</h1> 
 

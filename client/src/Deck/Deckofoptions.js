@@ -133,8 +133,8 @@ function handleToggle(e,index,down){
   }
 }
 
-const classchangeright = rightswipe? 'deckofcards-transform-right':'deckofcards'
-const classchangeleft = leftswipe? 'deckofcards-transform-left' : null
+const classchangeright = rightswipe? 'transform-right': null
+const classchangeleft = leftswipe? 'transform-left' : null
 
 
 
@@ -177,7 +177,7 @@ const classchangeleft = leftswipe? 'deckofcards-transform-left' : null
     <motion.div 
     
     
-    className={'deckofcards'}
+    className={`deckofcards ${classchangeright} ${classchangeleft}`}
     >
     
     {props.map(({ x, y, rot, scale }, i) => (

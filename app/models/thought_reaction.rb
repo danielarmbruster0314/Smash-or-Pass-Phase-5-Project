@@ -6,7 +6,7 @@ class ThoughtReaction < ApplicationRecord
     ThoughtReaction.where(is_valid: true)
   end
 
-  def self.invalidation
+  def self.invalidations
     ThoughtReaction.where(is_valid: false)
   end
 

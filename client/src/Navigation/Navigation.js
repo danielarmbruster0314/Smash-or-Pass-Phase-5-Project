@@ -109,7 +109,7 @@ return(
         <Popup content='Home'  trigger={
             <motion.h1
         
-            className='home_option'
+            className='home_option_nav'
 
             style={{ 
             backgroundImage: 'linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed)',
@@ -143,7 +143,7 @@ return(
 
         <Popup content='Profile' trigger={ 
                 <motion.h1
-                     className='home_option'
+                className='home_option_nav'
 
                      style={{  
                      backgroundImage: 'linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7)',
@@ -175,7 +175,7 @@ return(
 
         <Popup content='The Tea' trigger={ 
             <motion.h1
-                className='home_option'
+            className='home_option_nav'
 
                 style={{
                 backgroundImage: 'linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673)',
@@ -206,7 +206,7 @@ return(
 
         <Popup content='Daily Swipes' trigger={ 
             <motion.h1
-                 className='home_option'
+            className='home_option_nav'
 
                  style={{
                  backgroundImage: 'linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19)',
@@ -234,9 +234,10 @@ return(
                   onClick={()=>navigate('/swipe')}
             >👅 </motion.h1>
          } />
+         {user? (
          <Popup content='Logout' trigger={ 
                 <motion.h1
-                    className='home_option'
+                    className='home_option_nav'
 
                     style={{
                     backgroundImage: 'linear-gradient(to right, #eb3941, #f15e64, #e14e53, #e2373f)',
@@ -263,7 +264,7 @@ return(
 
                     onClick={()=>hadnleLogout()}
         >✌</motion.h1>
-            } />
+            } />) : null }
             
       </motion.button>
       </motion.div>

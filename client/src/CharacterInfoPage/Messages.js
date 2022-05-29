@@ -13,7 +13,7 @@ function Messages({posts}){
         <AnimateSharedLayout>
           <motion.ul className="messages_ul" layout initial={{ borderRadius: 25 }}>
             {posts.map(post => (
-              <Item key={post.id} content={post.content} postid={post.id}/>
+              <Item key={post.id} content={post.content} postid={post.id} user={post.user} validations={post.totalvalidations}/>
             ))}
           </motion.ul>
         </AnimateSharedLayout>
@@ -31,7 +31,7 @@ function Messages({posts}){
 
 
 
-    function Item({content, postid}) {
+    function Item({content, postid, user, validations}) {
         const [isOpen, setIsOpen] = useState(false);
         let [text , setText] = useState('')
 
@@ -77,6 +77,15 @@ function Messages({posts}){
             <div style={{
               position: 'relative'
             }}>
+              <span
+              style={{
+                display: 'flex',
+                fontSize: '14px',
+                justifyContent: 'space-evenly'
+              }}>
+                {validations} :<em>validations</em>
+                {validations} :<em>validations</em>
+              </span>
             <motion.button
             className="validate_button"
             style={{
@@ -95,7 +104,7 @@ function Messages({posts}){
               }}
 
             
-            >🥵 Validate</motion.button>
+            >🔥 Validate</motion.button>
             <motion.button
             className="invalidate_button"
             style={{
@@ -115,9 +124,9 @@ function Messages({posts}){
               }}
             
             
-            >🥶 Invalidate</motion.button>
+            >💧 Invalidate</motion.button>
             </div>
-            <Avatar />
+            <Avatar src={user?.image}/>
             <motion.p 
             className="message_text" 
             onClick={()=>setIsOpen(!isOpen)}>

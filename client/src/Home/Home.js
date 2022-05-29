@@ -91,7 +91,7 @@ function Home(){
                 }
               }}
               onClick={()=>{navigate('/login')}}
-              >💅 Sign In </motion.h1>
+              >💅 <span className='home_words'>Sign In</span> </motion.h1>
 
               <motion.h1
               className='home_option'
@@ -113,7 +113,7 @@ function Home(){
                 }
               }}
               onClick={()=>{navigate('/signup',true)}}
-              >🤩 Sign Up</motion.h1>
+              >🤩 <span className='home_words'>Sign Up</span></motion.h1>
 
               <motion.h1
               className='home_option'
@@ -131,7 +131,10 @@ function Home(){
                 }
               }}
               onClick={()=>navigate('/landingpage')}
-              ><span style={{fontSize: '45px'}}>🧋</span> The Tea</motion.h1>
+              ><span 
+              className='tea'
+              style={{fontSize: '45px'}}>🧋</span> 
+              <span className='home_words'>The Tea</span></motion.h1>
 
               <motion.h1
                className='home_option'
@@ -151,7 +154,7 @@ function Home(){
                 }
               }}
               onClick={()=>navigate('/swipe')}
-              >👅 Daily Swipe</motion.h1>
+              >👅 <span className='home_words'>Daily Swipe</span></motion.h1>
             </motion.button>
             </motion.div>
           </div>
