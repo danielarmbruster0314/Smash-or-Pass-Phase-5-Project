@@ -72,5 +72,11 @@
 
   
   
-  
+  @media only screen and (max-width: 670px) {
+.deck_card{
+  zoom: 1.15;
+}
+
+
+  }
   

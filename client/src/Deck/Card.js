@@ -3,7 +3,7 @@ import {AnimatePresence, motion,useMotionValue, useTransform } from 'framer-moti
 import './Card.css'
 function Card({card}){
     const [isOpen, setIsOpen] = useState(false)
-
+  console.log(isOpen)
     function handleClick(e){
         if(isOpen === true){
             setIsOpen(false)
@@ -31,7 +31,7 @@ function Card({card}){
           textAlign: 'center',
           fontSize: '40px',
           fontWieght: 'bold',
-          padding: '12.5px 0px'
+           padding: '12.5px 0px'
         }}
           >{card?.name}</motion.p>
         
@@ -48,7 +48,7 @@ function Card({card}){
         
          className="info_about_character"
         >
-          <p style={{fontWeight: 'bold'}}>{card?.origin}</p>
+          <p style={{fontWeight: 'bold'}}>{card?.origin} </p>
           <hr></hr>
           <p style={{paddingBottom: '40px'}}>{card?.role}</p>
         </motion.div>

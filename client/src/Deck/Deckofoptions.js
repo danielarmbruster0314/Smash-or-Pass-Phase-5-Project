@@ -18,10 +18,11 @@ const trans = (r, s) => `perspective(1500px) rotateX(10deg) rotateY(${r / 10}deg
 function Deck({user, setUser}) {
   const [cards, setCards] = useState([])
   const [count, setCount] = useState(0)
-  
+  const [rightswipe, setRightSwipe] = useState(false)
+  const [leftswipe, setLeftSwipe] = useState(false)
   const background =  [
     "linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%)",
-    "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
+    "transparent",
     "linear-gradient(180deg, rgb(230, 255, 0) 0%, rgb(3, 209, 0) 100%)"
   ];
   
@@ -83,6 +84,7 @@ console.log(result)
 
  function handleRight(index){
   const result = cards[index]
+  setRightSwipe(true)
   if(user){
     fetch("/ratings", {
       method: 'POST',
@@ -131,7 +133,8 @@ function handleToggle(e,index,down){
   }
 }
 
-
+const classchangeright = rightswipe? 'deckofcards-transform-right':'deckofcards'
+const classchangeleft = leftswipe? 'deckofcards-transform-left' : null
 
 
 
@@ -143,8 +146,9 @@ function handleToggle(e,index,down){
     const dir = xDir < 0 ? -1 : 1 
     // Direction should either point left or right
     //this shows the direction somone is seding the card 1 is to the right -1 is to the left
-    // if (!down && dir === 1) 
+     if (!down )  console.log(xDir)
     // if(trigger) 
+   
     if (!down && trigger) gone.add(index)
     // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
     if (!down && trigger && dir === -1) handleLeft(index)
@@ -163,20 +167,21 @@ function handleToggle(e,index,down){
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return(
     <>
-    <div style={{position: 'fixed',
-    zIndex: '5',
-  }}>
+    <div 
+    style={{
+      position: 'fixed',
+      zIndex: '5',
+      }}>
       <Navigation user={user} setUser={setUser}/>
     </div>
     <motion.div 
-    style={{}}
-  
     
-    className='deckofcards'
+    
+    className={'deckofcards'}
     >
     
     {props.map(({ x, y, rot, scale }, i) => (
-    <animated.div key={i} style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
+    <animated.div key={i}  style={{ transform: interpolate([x, y], (x, y) => `translate3d(${x}px,${y}px,0)`) }}>
       {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
       
       <animated.div 
@@ -188,11 +193,9 @@ function handleToggle(e,index,down){
       imageRendering: 'crisp-edges',
       
       
-      }} >
-       <motion.div
-       >
+      }} className="deck_card">
+      
       <Card card={cards[i]}/>
-      </motion.div>
       </animated.div>
     </animated.div>
     

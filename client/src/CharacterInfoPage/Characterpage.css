@@ -275,3 +275,54 @@
   text-align: center;
   margin-top: 25px;
 }
+
+
+
+@media only screen and (max-width: 670px) {
+  .characterpage{
+    flex-direction: column;
+    height: 1100px;
+  }
+
+  #List_items{
+    height: 80px;
+  }
+
+  nav{
+    height: 100px;
+  }
+  .underline{
+    height: 80px;
+  }
+
+  .input_bar_for_thought{
+    width: 500px;
+  }
+
+  .characterinfo{
+    width: 100%;
+    padding: 20px;
+    background-color: #888;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 8px 10px black;
+    margin-bottom: 5px;
+    color: white;
+    flex-shrink: 2.1;
+  }
+  
+  .character_image_container{
+    /* width: 500px; */
+    /* height: 600px;
+    margin: 100px 0px; */
+      padding: 50% 0px 0px 0px;
+      
+  }
+  .characterimages{
+    height: 1200px;
+    /* margin-bottom: 20px; */
+    padding-top: 20px;
+    width: 100%;
+    flex-grow: 1;
+    
+  }
+}
