@@ -69,8 +69,10 @@ function Characterpage({user,setUser}){
     function handleClose(){
         setOpenInput(false)
     }
-
-
+const totalrating= location.state?.totalsmashes + location.state?.totalpasses
+const percentpasses = (location.state?.totalpasses / totalrating) * 100
+const percentsmashes = (location.state?.totalsmashes / totalrating) * 100
+console.log(percentsmashes)
    console.log(selectedTab)
     
     return(
@@ -85,12 +87,12 @@ zIndex: '5'}}>
                 <div className="characterinfo">
 
                     <ProgressBar style={{width: 'auto',height: '50px'}} >
-                        <ProgressBar  variant="success" now={35} key={1} label={'Smashed 35% '} />
-                        <ProgressBar  variant="danger" now={65} key={3} label={'passed 65% '}/>
+                        <ProgressBar  variant="success" now={percentsmashes} key={1} label={`Smashed ${percentsmashes}% `} />
+                        <ProgressBar  variant="danger" now={percentpasses} key={3} label={`passed ${percentpasses}% `}/>
                     </ProgressBar>
                     <div className="amount_of_smashes_or_passes">
-                        <p>what</p>
-                        <p>why</p>
+                        <p><em>smashes: {location.state?.totalsmashes}</em></p>
+                        <p><em>passes: {location.state?.totalpasses}</em></p>
                     </div>
 
 
@@ -99,9 +101,9 @@ zIndex: '5'}}>
 
                     {/* character bio will go here */}
                     <h1>The Rundown</h1>
-                    <h2 style={{textAlign:'center'}}>{location.state.name}</h2>
+                    <h2 style={{textAlign:'center'}}>{location.state?.name}</h2>
                     <hr></hr>
-                    <p>{location.state.bio}
+                    <p>{location.state?.bio}
                     </p>
                 </div>
                 <div className="characterimages">
@@ -113,7 +115,7 @@ zIndex: '5'}}>
                                 <img
                                 
                                 className="d-block w-100"
-                                src={location.state.slide_image_1}
+                                src={location.state?.slide_image_1}
                                 alt="slider image"
                                 />
                                 <Carousel.Caption>
@@ -123,7 +125,7 @@ zIndex: '5'}}>
                                 <img
                                 
                                 className="d-block w-100"
-                                src={location.state.slide_image_2}
+                                src={location.state?.slide_image_2}
                                 alt="slider image"
                                 />
                                 <Carousel.Caption>
@@ -133,7 +135,7 @@ zIndex: '5'}}>
                                 <img
                                 
                                 className="d-block w-100"
-                                src={location.state.slide_image_3}
+                                src={location.state?.slide_image_3}
                                 alt="slider image"
                                 />
                                 <Carousel.Caption>
@@ -280,7 +282,7 @@ zIndex: '5'}}>
                                      </motion.div>
 
                                     {selectedTab ? (
-                                        <Messages posts={location.state.thoughts}/>
+                                        <Messages posts={location.state?.thoughts}/>
                                         // where to return the mapped assorted messages
                                     ) : "😋"}
                                 </motion.div>

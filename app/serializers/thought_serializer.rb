@@ -1,4 +1,5 @@
 class ThoughtSerializer < ActiveModel::Serializer
-  attributes :id, :content, :user, :totalvalidations, :totalinvalidations
- has_one :user
+  attributes :id, :content, :user, :totalvalidations, :totalinvalidations, :comments
+  has_one :user
+  has_many :comments, serializer: CommentSerializer
 end

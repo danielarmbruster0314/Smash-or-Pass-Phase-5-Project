@@ -12,8 +12,8 @@ function Messages({posts}){
     return (
         <AnimateSharedLayout>
           <motion.ul className="messages_ul" layout initial={{ borderRadius: 25 }}>
-            {posts.map(post => (
-              <Item key={post.id} content={post.content} postid={post.id} user={post.user} validations={post.totalvalidations}/>
+            {posts?.map(post => (
+              <Item key={post.id} content={post.content} postid={post.id} user={post.user} validations={post.totalvalidations} comments={post.comments}/>
             ))}
           </motion.ul>
         </AnimateSharedLayout>
@@ -31,7 +31,7 @@ function Messages({posts}){
 
 
 
-    function Item({content, postid, user, validations}) {
+    function Item({content, postid, user, validations,comments}) {
         const [isOpen, setIsOpen] = useState(false);
         let [text , setText] = useState('')
 
@@ -64,6 +64,15 @@ function Messages({posts}){
           }
         }
 
+        function handleSubmitOnClick(e){
+          e.preventDefault();
+          const foundSwears = swear.filter(word => text.toLowerCase().includes(word.toLowerCase()));
+          if(foundSwears.length){
+            alert(`we do not allow these words in messages or posts   (${foundSwears})`);
+             } else if (text.length){
+            console.log('No bad word found');
+           }
+        }
 
 
 
@@ -81,10 +90,12 @@ function Messages({posts}){
               style={{
                 display: 'flex',
                 fontSize: '14px',
-                justifyContent: 'space-evenly'
+                padding: '10px 0px',
+                justifyContent: 'space-evenly',
+                color: 'darkgray'
               }}>
-                {validations} :<em>validations</em>
-                {validations} :<em>validations</em>
+                <em>{validations} :validations</em>
+                <em>{validations} :invalidations</em>
               </span>
             <motion.button
             className="validate_button"
@@ -137,7 +148,7 @@ function Messages({posts}){
               <motion.div>
               {isOpen ? ( 
                 <>
-              <RelatedComments />
+              {comments?.map((comment)=> <RelatedComments key={comment.id} comment={comment.content} user={comment.user}/>)}
               <motion.form >
                 <motion.textarea 
                 className='related_comment_input' 
@@ -147,6 +158,25 @@ function Messages({posts}){
                 value={text}
                 placeholder="Elaborate on this topic..."/>
                 <button style={{display:'none'}} type="submit">Send</button>
+                <div
+                className='relatedcomment_input_buttons'
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-around'
+                  
+                }}
+                >
+                <motion.button
+                 onClick={()=>setIsOpen(!isOpen)}
+                >❌</motion.button>
+                <motion.button
+                style={{
+                      color: 'transparent',  
+                      textShadow: '0 0 0 green'
+                     }}
+                     onClick={(e)=>handleSubmitOnClick(e)}
+                     > ✔️</motion.button>
+                </div>
               </motion.form>
               </>): null}
               </motion.div>

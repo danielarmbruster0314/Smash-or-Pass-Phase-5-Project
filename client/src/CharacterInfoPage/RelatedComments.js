@@ -3,7 +3,8 @@ import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 import Avatar from '@mui/material/Avatar';
 
 
-function RelatedComments(){
+function RelatedComments({comment, user}){
+  console.log(user)
     return (
         <motion.div
         className="related_comments"
@@ -18,16 +19,11 @@ function RelatedComments(){
             }}
           exit={{ opacity: 0 }}
         >
-          <Avatar />
+          <Avatar src={user?.image}/>
           <div  >
-            <p>hello kljsfnjsdfasdfiosadfoasdjfiojasdf</p>
+            <p>{comment}</p>
           </div>
-          <div  >
-          <p>hi aslkfjaskdfsdjflasfdljalsfjlsajf</p>
-          </div>
-          <div  >
-              <p>hi there asldfaosjdfjsafjasfoajsdoifjd</p>
-         </div>
+          
         </motion.div>
       );
     }

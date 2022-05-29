@@ -121,3 +121,11 @@
 .message_container{
   min-width: 100% ;
 }
+
+.relatedcomment_input_buttons > button{
+  border: none;
+  border-radius: 90px;
+  box-shadow: 0px 0px 5px black;
+  height: 50px;
+  width: 50px;
+}

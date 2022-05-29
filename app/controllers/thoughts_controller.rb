@@ -1,6 +1,6 @@
 class ThoughtsController < ApplicationController
   before_action :set_thought, only: [:show, :update, :destroy]
-
+  skip_before_action :authorize, only: :index
   # GET /thoughts
   def index
     @thoughts = Thought.all

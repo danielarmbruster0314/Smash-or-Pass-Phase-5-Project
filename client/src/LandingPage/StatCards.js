@@ -25,6 +25,15 @@ const hue = (h) => `hsl(${h}, 100%, 50%)`;
 function StatCard({ image, name, index, character }) {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate();
+
+  const totalrating= character?.totalsmashes + character?.totalpasses
+  const percentpasses = (character?.totalpasses / totalrating) * 100
+  const percentsmashes = (character?.totalsmashes / totalrating) * 100
+
+
+
+
+
   return (
     <div className="card_page">
     <AnimatePresence>    
@@ -56,8 +65,8 @@ function StatCard({ image, name, index, character }) {
               exit={{ opacity: 0 }}>
     
               <ProgressBar style={{width: 'auto',height: '50px'}} >
-                <ProgressBar  variant="success" now={35} key={1} label={'Smashed 35%'}/>
-                <ProgressBar  variant="danger" now={65} key={3} label={'passed 65%'}/>
+                <ProgressBar  variant="success" now={percentsmashes} key={1} label={`Smashed ${percentsmashes}% `}/>
+                <ProgressBar  variant="danger" now={percentpasses} key={3} label={`passed ${percentpasses}% `}/>
               </ProgressBar>
                 <p> #{index}  <span style={{fontFamily: 'Fredoka One'}}>{name}</span></p>
                 </motion.div>
