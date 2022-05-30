@@ -1,6 +1,6 @@
 class ThoughtsController < ApplicationController
   before_action :set_thought, only: [:show, :update, :destroy]
-  skip_before_action :authorize, only: :index
+  skip_before_action :authorize, only: [:index, :topthoughts, :bottomthoughts, :randomthoughts]
   # GET /thoughts
   def index
     @thoughts = Thought.all
@@ -12,7 +12,26 @@ class ThoughtsController < ApplicationController
   def show
     render json: @thought
   end
+  
 
+  def randomthoughts
+    thoughts = Thought.where(character_id: params[:id])
+    random = thoughts.order('RANDOM()').limit(10)
+    render json: random 
+  end
+
+  def topthoughts
+    thoughts = Thought.where(character_id: params[:id])
+    top =thoughts.more_validations
+    render json: top
+  end   
+
+
+  def bottomthoughts
+    thoughts = Thought.where(character_id: params[:id])
+    bottom =thoughts.more_invalidations
+    render json: bottom
+  end   
   # POST /thoughts
   def create
     @thought = Thought.new(thought_params)

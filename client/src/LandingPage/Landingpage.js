@@ -10,14 +10,22 @@ import {useEffect,useState} from 'react';
 
 function Landingpage({user, setUser}){
 const[topSmashes, setTopSmashes] = useState(null)
-
+const[topPasses, setTopPasses] = useState(null)
 
     useEffect(() => {
         // Update the document title using the browser API
-        fetch("/characters")
+        fetch("/topsmashes")
 		.then((r) => {
 			if (r.ok){
 				r.json().then((data) => setTopSmashes(data))
+			}else{
+				r.json().then((error)=> console.log(error) )
+			}
+		})
+        fetch("/toppasses")
+		.then((r) => {
+			if (r.ok){
+				r.json().then((data) => setTopPasses(data))
 			}else{
 				r.json().then((error)=> console.log(error) )
 			}
@@ -43,10 +51,9 @@ return(
     >The Most Passes</h1> 
 
 
-    {/* {food.map((obj,index) => (
-        
-                <StatCard emoji={obj.emoji} url={obj.url} key={obj.emoji} name={obj.name} index={index + 1}/>
-            ))} */}
+        {topPasses?.map((character,index) => (
+                <StatCard  image={character.main_image} key={character.id} name={character.name} index={index + 1} character={character}/>
+            ))}
 
     </div>
     </div>

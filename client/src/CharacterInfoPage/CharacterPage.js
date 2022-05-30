@@ -43,14 +43,66 @@ function Characterpage({user,setUser}){
 
 
 
+    useEffect(() => {
+        // Update the document title using the browser API
+        if(location.state){
+            const id = location.state.id
+            fetch("/topthoughts", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            })
+            .then((r) => {
+                if (r.ok){
+                    r.json().then((posts) => setMostValidated(posts))
+                }else{
+                    r.json().then((error)=> console.log(error) )
+                }
+            })
+            fetch("/bottomthoughts", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            })
+            .then((r) => {
+                if (r.ok){
+                    r.json().then((posts) => setMostInValidated(posts))
+                }else{
+                    r.json().then((error)=> console.log(error) )
+                }
+            })
+            fetch("/randomthoughts", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id }),
+            })
+            .then((r) => {
+                if (r.ok){
+                    r.json().then((posts) => setDiscover(posts))
+                }else{
+                    r.json().then((error)=> console.log(error) )
+                }
+            })
+    }
+      },[]);
+    
+
+
+
     //this is where we can break down the passed state from the navigation link
     console.log(location.state)
 
 
     const allIngredients = [
-        { id: 0, icon: "😃", label: "Most Validated", posts:mostValidated },
-        { id: 1,icon: "😖", label: "Most Invalidated" ,posts:mostInValidated},
-        { id: 2,icon: "👀", label: "Discover", posts:discover }
+        { id: 0, icon: "😃", label: "Most Validated", posts: mostValidated },
+        { id: 1,icon: "😖", label: "Most Invalidated" , posts: mostInValidated},
+        { id: 2,icon: "👀", label: "Discover", posts: discover }
       ];
     const [most, lettuce, cheese] = allIngredients;
     const tabs = [most, lettuce, cheese];
@@ -73,7 +125,7 @@ const totalrating= location.state?.totalsmashes + location.state?.totalpasses
 const percentpasses = (location.state?.totalpasses / totalrating) * 100
 const percentsmashes = (location.state?.totalsmashes / totalrating) * 100
 console.log(percentsmashes)
-   console.log(selectedTab)
+   console.log(selectedTab.posts)
     
     return(
     <>
@@ -282,7 +334,7 @@ zIndex: '5'}}>
                                      </motion.div>
 
                                     {selectedTab ? (
-                                        <Messages posts={location.state?.thoughts}/>
+                                        <Messages posts={selectedTab.posts}/>
                                         // where to return the mapped assorted messages
                                     ) : "😋"}
                                 </motion.div>

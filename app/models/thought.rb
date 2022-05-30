@@ -11,4 +11,16 @@ class Thought < ApplicationRecord
     def totalinvalidations
         self.thought_reactions.invalidations.length
     end 
+
+    def self.more_validations
+        thoughts =Thought.select {|thought| thought.totalvalidations > thought.totalinvalidations}
+        organize= thoughts.sort_by{ |thought| thought.totalvalidations}
+        organize.reverse.take(10)
+    end
+
+    def self.more_invalidations
+        thoughts =Thought.select {|thought| thought.totalvalidations < thought.totalinvalidations}
+        organize= thoughts.sort_by{ |thought| thought.totalinvalidations}
+        organize.reverse.take(10)
+    end
 end

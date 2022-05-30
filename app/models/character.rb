@@ -10,4 +10,20 @@ class Character < ApplicationRecord
     def totalpasses
         self.ratings.passes.length
     end 
+
+    def self.more_smashes_than_passes
+        Character.select {|character| character.totalsmashes > character.totalpasses}
+    end
+
+    def self.more_passes_than_smashes
+        Character.select {|character| character.totalsmashes < character.totalpasses}
+    end
+
+    def topthoughts 
+        self.thoughts.more_validations
+    end
+
+    def bottomthoughts
+        self.thoughts.more_invalidations
+    end 
 end

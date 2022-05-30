@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   resources :thoughts
   resources :characters
   resources :users
+  get "/toppasses", to: "characters#toppasses"
+  get "/topsmashes", to: "characters#topsmashes"
+  post "/topthoughts", to: "thoughts#topthoughts"
+  post "/bottomthoughts", to: "thoughts#bottomthoughts"
+  post "/randomthoughts", to: "thoughts#randomthoughts"
+  post "/swipe", to: "characters#swipe"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
   post "/login", to: "sessions#create"
