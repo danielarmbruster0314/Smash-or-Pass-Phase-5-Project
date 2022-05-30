@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :update, :destroy]
-  skip_before_action :authorize, only: :index
+  skip_before_action :authorize, only: [:index, :create]
   # GET /characters
   def index
     @characters = Character.all
@@ -8,6 +8,10 @@ class CharactersController < ApplicationController
     render json: @characters, include: ['thoughts', 'thoughts.comments']
   end
 
+  def chracterstoswipe
+    characters = Character.where.missing(:rating).where(ratings: {user_id: !params[:id]})
+    render json: characters
+  end
   # GET /characters/1
   def show
     render json: @character
@@ -15,13 +19,16 @@ class CharactersController < ApplicationController
 
   # POST /characters
   def create
-    @character = Character.new(character_params)
-
-    if @character.save
-      render json: @character, status: :created, location: @character
-    else
-      render json: @character.errors, status: :unprocessable_entity
-    end
+    
+    characters = Character.left_outer_joins(:ratings).where.not(ratings: {user_id: params[:id]})
+    render json: characters.uniq
+    # @character = Character.new(character_params)
+    # .where(ratings: {user_id: params[:id]})
+    # if @character.save
+    #   render json: @character, status: :created, location: @character
+    # else
+    #   render json: @character.errors, status: :unprocessable_entity
+    # end
   end
 
   # PATCH/PUT /characters/1
