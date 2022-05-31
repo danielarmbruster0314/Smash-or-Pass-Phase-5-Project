@@ -12,11 +12,12 @@ class ThoughtReactionsController < ApplicationController
   def show
     render json: @thought_reaction
   end
+
   def reaction
     if ThoughtReaction.exists?(user_id: params[:user_id], thought_id: params[:thought_id])
       found = ThoughtReaction.find_by(user_id: params[:user_id], thought_id: params[:thought_id])
-      rection = found.update(is_valid: params[:is_valid])
-      reander json: reaction
+      reaction = found.update(is_valid: params[:is_valid])
+      render json: reaction
     else
       reaction = ThoughtReaction.create!(thought_reaction_params)
       render json: reaction

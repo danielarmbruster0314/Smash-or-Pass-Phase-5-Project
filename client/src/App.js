@@ -8,7 +8,7 @@ import {AccountBox} from './Accountforum/Accountform.js'
 import { Routes, Route } from "react-router-dom";
 import Navigation from './Navigation/Navigation';
 import {useState} from 'react'
-
+import ProfilePage from './ProfilePage/ProfilePage'
 function App() {
 const [user, setUser] = useState(null)
 	const signup = true
@@ -23,7 +23,7 @@ const [user, setUser] = useState(null)
 				<Route path='/signup' element={<AccountBox signup={signup} setUser={setUser}/>}></Route>
 				<Route path='/characterinfo' element={<Characterpage user={user} setUser={setUser}/>}></Route>
 				<Route path='/swipe' element={<Deck user={user} setUser={setUser}/>}></Route>
-				<Route path='/navigate' element={<Navigation />}></Route>
+				<Route path='/profile' element={<ProfilePage user={user} setUser={setUser}/>}></Route>
 			</>
 		</Routes>
   );

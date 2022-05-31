@@ -169,7 +169,7 @@ return(
                       }
                      }}
 
-                     onClick={()=>{navigate('/signup',true)}}
+                     onClick={()=>{user? navigate('/profile') :navigate('/signup',true) }}
             > 😎</motion.h1>
         } /> 
 

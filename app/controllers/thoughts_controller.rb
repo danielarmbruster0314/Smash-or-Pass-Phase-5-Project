@@ -65,6 +65,6 @@ class ThoughtsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def thought_params
-      params.require(:thought).permit(:content)
+      params.require(:thought).permit(:content, :user_id, :character_id)
     end
 end

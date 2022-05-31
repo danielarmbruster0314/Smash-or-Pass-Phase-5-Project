@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  before_action :authorize, only: [:show, :update, :destroy]
   skip_before_action :authorize, only: :create
 
 
@@ -24,7 +24,8 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(user_params)
+    @user = User.find params[:id]
+    if @user.update(user_params_image)
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -42,7 +43,9 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :image, :password_digest)
     end
-
+     def user_params_image
+      params.require(:user).permit(:image)
+     end
     def user_params_create
       params.permit(:username, :password, :password_confirmation, :email)
     end

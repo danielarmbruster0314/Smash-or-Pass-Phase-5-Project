@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/topthoughts", to: "thoughts#topthoughts"
   post "/bottomthoughts", to: "thoughts#bottomthoughts"
   post "/randomthoughts", to: "thoughts#randomthoughts"
+  post "/reaction", to: "thought_reactions#reaction"
   post "/swipe", to: "characters#swipe"
   post "/signup", to: "users#create"
   get "/me", to: "users#show"

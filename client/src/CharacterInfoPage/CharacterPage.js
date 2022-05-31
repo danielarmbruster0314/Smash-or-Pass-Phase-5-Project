@@ -8,7 +8,7 @@ import {useLocation} from 'react-router-dom';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import Navigation from "../Navigation/Navigation";
 import { border, borderRadius, height } from '@mui/system';
-
+import  {Item}  from './Messages';
 const data = [
     {
      image: 'https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg', 
@@ -40,7 +40,7 @@ function Characterpage({user,setUser}){
     const [mostValidated, setMostValidated] = useState(null)
     const [mostInValidated, setMostInValidated] = useState(null)
     const [discover, setDiscover] = useState(null) 
-
+    const [newPost, setNewPost] = useState(null)
 
 
     useEffect(() => {
@@ -96,7 +96,7 @@ function Characterpage({user,setUser}){
 
 
     //this is where we can break down the passed state from the navigation link
-    console.log(location.state)
+    
 
 
     const allIngredients = [
@@ -124,8 +124,56 @@ function Characterpage({user,setUser}){
 const totalrating= location.state?.totalsmashes + location.state?.totalpasses
 const percentpasses = (location.state?.totalpasses / totalrating) * 100
 const percentsmashes = (location.state?.totalsmashes / totalrating) * 100
-console.log(percentsmashes)
-   console.log(selectedTab.posts)
+
+
+let swear = [
+    'chink',
+    'ch1nk',
+    'nigger',
+    'niger',
+    'nigg3r',
+    'n1gger',
+    'n1gg3r',
+    'fag',
+    'faggot',
+    'cunt',
+    'frigger',
+    ]
+
+function handlePost(){
+    const foundSwears = swear.filter(word => postInput.toLowerCase().includes(word.toLowerCase()));
+    if(foundSwears.length){
+            alert(`we do not allow these words in messages or posts   (${foundSwears})`);
+    }else if(user){
+        const data ={
+            character_id: location.state?.id,
+            user_id: user?.id,
+            content: postInput
+        }
+        fetch("/thoughts", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then((r) => {
+            if (r.ok){
+                r.json().then((data) => {
+                    console.log(data)
+                  setNewPost(data)
+                })
+            }else{
+                r.json().then((error)=> console.log(error) )
+            }
+        })
+    }else{
+        alert('please be signed in to make a post')
+    }
+
+
+}
+
     
     return(
     <>
@@ -321,7 +369,7 @@ zIndex: '5'}}>
                                                      ❌
                                                     </motion.button>
                                                     <motion.button 
-
+                                                    onClick={()=>handlePost()}
                                                     style={{
                                                         fontSize: '30px',
                                                         color: 'transparent',  
@@ -332,7 +380,15 @@ zIndex: '5'}}>
                                                  </motion.div>
                                          </motion.forum>
                                      </motion.div>
-
+                                    {newPost? 
+                                    (<div>
+                                        <h2>Recently Created Post</h2>
+                                        <hr></hr>
+                                        <div className='new_post'>
+                                            <Messages posts={[newPost]} loggedInUser={user} />
+                                       
+                                        </div>
+                                    </div>): null }
                                     {selectedTab ? (
                                         <Messages posts={selectedTab.posts} loggedInUser={user}/>
                                         // where to return the mapped assorted messages
