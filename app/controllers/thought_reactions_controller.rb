@@ -12,7 +12,17 @@ class ThoughtReactionsController < ApplicationController
   def show
     render json: @thought_reaction
   end
-
+  def reaction
+    if ThoughtReaction.exists?(user_id: params[:user_id], thought_id: params[:thought_id])
+      found = ThoughtReaction.find_by(user_id: params[:user_id], thought_id: params[:thought_id])
+      rection = found.update(is_valid: params[:is_valid])
+      reander json: reaction
+    else
+      reaction = ThoughtReaction.create!(thought_reaction_params)
+      render json: reaction
+    end
+  
+  end
   # POST /thought_reactions
   def create
     @thought_reaction = ThoughtReaction.new(thought_reaction_params)
@@ -46,6 +56,6 @@ class ThoughtReactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def thought_reaction_params
-      params.require(:thought_reaction).permit(:thought_id, :user_id)
+      params.permit(:thought_id, :user_id, :is_valid)
     end
 end

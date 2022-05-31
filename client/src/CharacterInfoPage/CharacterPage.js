@@ -334,7 +334,7 @@ zIndex: '5'}}>
                                      </motion.div>
 
                                     {selectedTab ? (
-                                        <Messages posts={selectedTab.posts}/>
+                                        <Messages posts={selectedTab.posts} loggedInUser={user}/>
                                         // where to return the mapped assorted messages
                                     ) : "😋"}
                                 </motion.div>
