@@ -6,16 +6,14 @@ class CharactersController < ApplicationController
   # GET /characters
   def index
     @characters = Character.all
-
-    render json: @characters, include: ['thoughts', 'thoughts.comments', 'thoughts.more_validations', 'thoughts.more_invalidations']
+    random = @characters.order('RANDOM()').limit(10)
+    render json: random, include: ['thoughts', 'thoughts.comments', 'thoughts.more_validations', 'thoughts.more_invalidations']
   end
   
   def toppasses
     characters = Character.more_passes_than_smashes.sort_by{ |obj| obj.totalpasses }
     sorted = characters.reverse.take(10)
-    
     render json: sorted, include: ['thoughts', 'thoughts.comments', 'thoughts.more_validations', 'thoughts.more_invalidations']
-
   end 
 
 

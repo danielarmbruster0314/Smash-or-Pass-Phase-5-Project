@@ -3,7 +3,7 @@ import {AnimatePresence, motion,useMotionValue, useTransform } from 'framer-moti
 import './Card.css'
 function Card({card}){
     const [isOpen, setIsOpen] = useState(false)
-  console.log(isOpen)
+  
     function handleClick(e){
         if(isOpen === true){
             setIsOpen(false)

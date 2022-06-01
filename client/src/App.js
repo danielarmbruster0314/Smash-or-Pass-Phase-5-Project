@@ -7,11 +7,16 @@ import Characterpage from './CharacterInfoPage/CharacterPage';
 import {AccountBox} from './Accountforum/Accountform.js'
 import { Routes, Route } from "react-router-dom";
 import Navigation from './Navigation/Navigation';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import ProfilePage from './ProfilePage/ProfilePage'
 function App() {
 const [user, setUser] = useState(null)
 	const signup = true
+	useEffect(() => {
+		fetch('/me')
+		.then((resp) => resp.json())
+		.then((user)=> setUser(user))
+	},[])
   return (
     <Routes>
 		

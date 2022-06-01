@@ -266,7 +266,10 @@ function Messages({posts, loggedInUser}){
             
             >💧 Invalidate</motion.button>
             </div>
+            <div style={{display: 'flex',gap: '20px'}}>
             <Avatar src={user?.image}/>
+            <em style={{color: '#888'}}>{user?.username}</em>
+            </div>
             <motion.p 
             className="message_text" 
             onClick={()=>setIsOpen(!isOpen)}>

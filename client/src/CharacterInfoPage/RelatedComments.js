@@ -19,8 +19,11 @@ function RelatedComments({comment, user}){
             }}
           exit={{ opacity: 0 }}
         >
+          <div style={{display: 'flex', gap: '20px'}}>
           <Avatar src={user?.image}/>
-          <div  >
+          <em style={{color: '#888'}}>{user?.username}</em>
+          </div>
+          <div>
             <p>{comment}</p>
           </div>
           

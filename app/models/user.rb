@@ -6,5 +6,5 @@ class User < ApplicationRecord
     has_secure_password
     has_many :characters, through: :ratings
     
-    
+    validates :username, uniqueness: true
 end

@@ -31,14 +31,25 @@ function Deck({user, setUser}) {
 
   useEffect(() => {
     // Update the document title using the browser API
-    fetch("/characters")
-.then((r) => {
-  if (r.ok){
-    r.json().then((data) => setCards(data))
-  }else{
-    r.json().then((error)=> console.log(error) )
-  }
-})
+    if(user){
+     fetch("/swipe", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_id:user.id }),
+      })
+        .then((r) => {
+          if (r.ok){
+            r.json().then((data) => setCards(data))
+          }else{
+            r.json().then((error)=> console.log(error) )
+          }
+        })}else{
+          fetch("/characters")
+          .then((resp)=> resp.json())
+          .then((characters)=> setCards(characters))
+        }
   },[]);
 
 
@@ -72,7 +83,6 @@ if(user){
     }
   })
 
-  console.log('somtheing could happen')
 }else if(count < 1){
   alert('please login in to participate none of this sessions swipes will be saved')
   setCount(2)

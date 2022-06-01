@@ -18,6 +18,7 @@ export function LoginForm({setUser}) {
   const { switchToSignup } = useContext(AccountContext);
   const[username, setUserName] = useState(null)
   const [password, setPassword] = useState(null)
+  const[error, setError] = useState(null)
   const navigate = useNavigate();
 
 function handleSubmit(e){
@@ -34,7 +35,7 @@ function handleSubmit(e){
 				r.json().then((user) => setUser(user))
 				navigate('/landingpage')
 			}else{
-				r.json().then((error)=> console.log(error) )
+				r.json().then((error)=> setError(error) )
 			}
 		})
 }
@@ -44,6 +45,9 @@ function handleSubmit(e){
       <FormContainer>
         <Input type="username" placeholder="Username" onChange={(e)=>setUserName(e.target.value)} />
         <Input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
+        {error? (
+          <p className="login_error">{error?.errors}</p>
+        ): null}
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
       <MutedLink href="#">Forget your password?</MutedLink>
