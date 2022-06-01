@@ -20,6 +20,7 @@ function Deck({user, setUser}) {
   const [count, setCount] = useState(0)
   const [rightswipe, setRightSwipe] = useState(false)
   const [leftswipe, setLeftSwipe] = useState(false)
+  const [empty, setEmpty] = useState(false)
   const background =  [
     "linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%)",
     "transparent",
@@ -87,7 +88,8 @@ if(user){
   alert('please login in to participate none of this sessions swipes will be saved')
   setCount(2)
 }
-console.log(result)
+setLeftSwipe(true)
+setRightSwipe(false)
 }
 
 
@@ -117,7 +119,8 @@ console.log(result)
     alert('please login in to participate none of this sessions swipes will be saved')
     setCount(2)
   }
-  console.log(result)
+  setRightSwipe(true)
+  setLeftSwipe(false)
  }
 
 
@@ -143,9 +146,9 @@ function handleToggle(e,index,down){
   }
 }
 
-const classchangeright = rightswipe? 'transform-right': null
-const classchangeleft = leftswipe? 'transform-left' : null
-
+const classchangeright = rightswipe? 'transform right': null
+const classchangeleft = leftswipe? 'transform left' : null
+const classchangegone = empty? 'transform empty' : null
 
 
   const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
@@ -172,7 +175,7 @@ const classchangeleft = leftswipe? 'transform-left' : null
     
       return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
     })
-    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || set(i => to(i)), 600)//reseting cards after they are gone
+    if (!down && gone.size === cards.length) setTimeout(() => gone.clear() || setEmpty(true),600)//reseting cards after they are gone |set(i => to(i))|
   })
   // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
   return(
@@ -187,7 +190,7 @@ const classchangeleft = leftswipe? 'transform-left' : null
     <motion.div 
     
     
-    className={`deckofcards ${classchangeright} ${classchangeleft}`}
+    className={`deckofcards ${classchangeright} ${classchangeleft} ${classchangegone}`}
     >
     
     {props.map(({ x, y, rot, scale }, i) => (
