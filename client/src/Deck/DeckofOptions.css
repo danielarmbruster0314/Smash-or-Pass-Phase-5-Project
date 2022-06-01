@@ -347,3 +347,23 @@
     align-items: center;
     justify-content: center;
   }
+
+
+
+  .end_of_swipe{
+    color: white;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    border-radius: 90px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      border: none;
+      font-size: 22px;
+      font-family: 'Fredoka One';
+      text-shadow: 0px 3px 5px #23d5ab;
+  }

@@ -79,36 +79,6 @@ function Messages({posts, loggedInUser}){
           'frigger',
           ]
         
-        function handleSubmit(e){
-          e.preventDefault();
-          const data = {content: text, thought_id: postid, user_id: loggedInUser?.id}
-          const foundSwears = swear.filter(word => text.toLowerCase().includes(word.toLowerCase()));
-          if(e.keyCode == 13 && e.shiftKey == false && foundSwears.length){
-          e.preventDefault();
-            alert(`we do not allow these words in messages or posts   (${foundSwears})`);
-           }else if(loggedInUser){
-            fetch("/comments", {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(data),
-          })
-          .then((r) => {
-              if (r.ok){
-                  r.json().then((newcomment) => {
-                    setAllComments([...allcomments,newcomment])
-                    setText('')
-                  })
-              }else{
-                  r.json().then((error)=> console.log(error) )
-              }
-          })
-           }else{
-             alert('plaese sign in to add a comment to this post')
-           }
-        }
-
 
         function handleSubmitOnClick(e){
           e.preventDefault();
@@ -285,7 +255,6 @@ function Messages({posts, loggedInUser}){
                 <motion.textarea 
                 className='related_comment_input' 
                 type='text' 
-                onKeyDown={(e)=>handleSubmit(e)} 
                 onChange={e => setText(e.target.value) }
                 value={text}
                 placeholder="Elaborate on this topic..."/>

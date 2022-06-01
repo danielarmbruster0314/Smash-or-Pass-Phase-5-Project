@@ -123,7 +123,31 @@ setRightSwipe(false)
   setLeftSwipe(false)
  }
 
-
+function handleContinue(){
+  if(user){
+    fetch("/swipe", {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify({ user_id:user.id }),
+     })
+       .then((r) => {
+         if (r.ok){
+           r.json().then((data) => setCards(data))
+         }else{
+           r.json().then((error)=> console.log(error) )
+         }
+       })}else{
+         fetch("/characters")
+         .then((resp)=> resp.json())
+         .then((characters)=> setCards(characters))
+       }
+       setEmpty(false)
+       setLeftSwipe(false)
+       setRightSwipe(false)
+       setTimeout(() => gone.clear() || set(i => to(i)),600)
+}
 
 
 
@@ -213,6 +237,33 @@ const classchangegone = empty? 'transform empty' : null
     </animated.div>
     
   ))}
+  {empty? (
+  <AnimatePresence>
+    
+  <motion.button  
+   intiail={{
+    opactiy: 0,
+    display: 'hidden'
+  }}
+  whileHover={{
+    scale: 1.6, 
+    cursor: 'pointer',
+    }}
+
+    animate={{
+    display: empty? 'block': 'none',
+    opacity: empty? 1 : 0,
+    transition: {
+        delay: empty? 5 : 0,
+        type: 'spring'
+     }
+    }}
+  className="end_of_swipe"
+  onClick={()=>handleContinue()}
+ 
+  
+  >Keep Swiping ?</motion.button>
+  </AnimatePresence>) : null}
   </motion.div>
   </>
 )}
