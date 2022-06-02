@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 
 
 function RelatedComments({comment, user}){
-  console.log(user)
     return (
         <motion.div
         className="related_comments"

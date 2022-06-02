@@ -18,7 +18,7 @@ export function SignupForm({setUser}) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmpassword, setConfirmPassword] = useState('')
-  const [error, setError] = useState(true)
+  const [error, setError] = useState(false)
   const navigate = useNavigate();
 
 function handleCreateAccount(e){

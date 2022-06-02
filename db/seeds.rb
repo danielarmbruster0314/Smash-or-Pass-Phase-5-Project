@@ -241,7 +241,7 @@ character1 = Character.create(
      )     
      character22 = Character.create(
         name: 'Valka Haddock',
-        bio: 'Her years of isolation and dealing with nothing but dragons has made her very distrusting of humans in general. Because of this, she has an absolute and black-and-white, perhaps even fatalistic view about people, believing them incapable of change and that some people are "born different". Despite her bitterness over her fellow man, Valka\'s past as a wife and mother allows her to possess an overwhelming love for those in her care, succeeding in building good relationships with the dragons she rescues.'
+        bio: 'Her years of isolation and dealing with nothing but dragons has made her very distrusting of humans in general. Because of this, she has an absolute and black-and-white, perhaps even fatalistic view about people, believing them incapable of change and that some people are "born different". Despite her bitterness over her fellow man, Valka\'s past as a wife and mother allows her to possess an overwhelming love for those in her care, succeeding in building good relationships with the dragons she rescues.',
         role: 'Rogue Dragon Rider',
         origin: 'How to Train Your Dragon',
         main_image: 'https://i.pinimg.com/736x/0e/b2/0a/0eb20ae792f34fef983ddd6997f97ec3.jpg',
@@ -259,9 +259,9 @@ character1 = Character.create(
      slide_image_2: 'https://wiki.gbl.gg/images/thumb/4/4d/SG_big_dpp.png/500px-SG_big_dpp.png',
      slide_image_3: 'https://www.pngitem.com/pimgs/m/601-6011853_big-band-skullgirls-png-transparent-png.png'
      )  
-    character21 = Character.create(
+    character24 = Character.create(
      name: 'Saitama',
-     bio: 'Saitama is an indifferent person. Even the mightiest foes pose no challenge to him, so he does not take his hero work seriously, goes through everything with little to no effort, and yearns for an opponent that can provide him with a challenge.The lack of worthy opponents has led him to suffer from a self-imposed existential crisis, and he claims that his ability to feel any and all emotions has dulled considerably. The combination of his attitude, unstoppable power, and "unimpressive" appearance often causes his battles to become anticlimactic. Saitama will usually allow his opponents to rant about their motives and power up into their strongest forms, before obliterating them with a single punch.'
+     bio: 'Saitama is an indifferent person. Even the mightiest foes pose no challenge to him, so he does not take his hero work seriously, goes through everything with little to no effort, and yearns for an opponent that can provide him with a challenge.The lack of worthy opponents has led him to suffer from a self-imposed existential crisis, and he claims that his ability to feel any and all emotions has dulled considerably. The combination of his attitude, unstoppable power, and "unimpressive" appearance often causes his battles to become anticlimactic. Saitama will usually allow his opponents to rant about their motives and power up into their strongest forms, before obliterating them with a single punch.',
      role: 'The Fist That Has Turned Against God ', 
      origin: 'One-Punch Man',
      main_image:'https://i.pinimg.com/originals/51/3b/b7/513bb7305275cb7abba98af4b0aeb88e.jpg',
@@ -269,7 +269,7 @@ character1 = Character.create(
      slide_image_2: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/06/Saitama-in-a-crater-from-One-Punch-Man.jpg?q=50&fit=crop&w=1400&dpr=1.5',
      slide_image_3: 'https://manshoor.com/uploads/thumbs/609/6091a5714cd563bf853db2c5db540c7c.jpg'
      )
-     character21 = Character.create(
+     character25 = Character.create(
      name: 'Benoit Blanc',
      bio: 'Blanc is considered "The Last of the Gentlemen Sleuths" and in many ways is a typical portrayal of that kind of character. He\'s flamboyant, practical, gentlemanly, somewhat eccentric, a cigar chomper, but incredibly clever, intelligent, and an overall good detective. Despite these archetypes usually being British (as well as being played by a British actor), Blanc talks like a member of the Southern aristocracy with an accent that can only be described as a "Kentucky Fried Foghorn Leghorn Drawl".',
      role: 'Detective',
@@ -279,7 +279,7 @@ character1 = Character.create(
      slide_image_2: 'https://images.squarespace-cdn.com/content/v1/5a5ccb53ccc5c5e98ccd9457/1590648618514-BVGOK5EW6VIP9DYV49W4/production+still+belt+suspenders+resize.jpg',
      slide_image_3: 'https://theubj.com/wp-content/uploads/2021/10/A842E398-FFDF-43F1-9CF0-3E54F69267CB.jpeg'
      )    
-     character21 = Character.create(
+     character26 = Character.create(
      name: 'Connor',
      bio: 'From the start, Connor is a neutral character and is indifferent to the treatment of androids in Detroit. Depending on the player\'s choices, Connor’s core personality throughout the game can take several directions, ultimately either making him comply with his directives and consider himself a machine, or consider himself an individual being and seek to join his people.',
      role: 'The Negotiator', 
@@ -289,487 +289,481 @@ character1 = Character.create(
      slide_image_2: 'https://i1.sndcdn.com/artworks-000355957812-ag1rfx-t500x500.jpg',
      slide_image_3: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/detroit-become-human/4/45/Connor01.jpg?width=1280'
      )    
-     character21 = Character.create(
+     character27 = Character.create(
      name: 'Josuke Higashikata',
      bio: 'Josuke is relatively polite and has been shown to strongly value familial relationships. Being amnesiac, Josuke places a great emphasis on one\'s family and legacy, wishing to learn his own past. He seems to be totally oblivious when it comes to mundane things while at the same time retaining in-depth knowledge of animal and plant species.',
-     role: 'Stand: Soft & Wet'
+     role: 'Stand: Soft & Wet',
      origin: 'JoJo\'s Bizarre',
      main_image: 'https://i.pinimg.com/originals/90/75/52/9075521c5d3916b47821c8121b01a9f4.jpg',
      slide_image_1: 'https://static.jojowiki.com/images/thumb/e/e7/latest/20191208113052/JosukeRender.png/160px-JosukeRender.png',
      slide_image_2: 'https://static.jojowiki.com/images/a/a1/latest/20191208112759/Josuke_DU_Infobox_Manga.png',
      slide_image_3: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/10/Josuke-Ruined-His-Likability.jpg'
      )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
+     character28 = Character.create(
+     name: 'Jotaro Kujo',
+     bio: 'Jotaro is introduced as a rough delinquent, but he has a gentle heart, and is loyal to those he likes. He is highly perceptive, intelligent and quick-witted while keeping a perpetually cool, slightly neutral or disinterested attitude. Jotaro\'s most noticeable trait is his seemingly aloof nature. He is a quiet individual, often satisfied with expressing himself in short phrases. His bio explains that he thinks anyone can tell his emotions just by looking at him, and probably thinks further effort in portraying how he feels to be a waste of time, making others tend to perceive Jotaro as callous',
+     role: 'Stand: Star Platinum',
+     origin: 'JoJo\'s Bizarre',
+     main_image: 'https://64.media.tumblr.com/e27d53fd464bc983c6a32fb9df6ba1b3/tumblr_pmrdhjp2HX1vn236c_1280.png',
+     slide_image_1: 'https://static.wikia.nocookie.net/divided-destiny/images/b/b5/Jojo_Jotaro_512-k937074.jpg/revision/latest/top-crop/width/360/height/450?cb=20201009152701',
+     slide_image_2: 'https://www.meme-arsenal.com/memes/a0aa54c977458c1ea7016796f69166ba.jpg',
+     slide_image_3: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/12/jotaro-blue-sky.jpg',
      )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
+     character29 = Character.create(
+     name: 'Yoshikage Kira',
+     bio: 'Kira longs for a peaceful and quiet life, safe from any worry, and does not wish for it to be interrupted. Whenever that life seems assured, Kira adopts a jolly and confident demeanor.[7][8] Although he is highly intelligent and possesses many talents, this yearning shows in his dislike of coming in first, and Jotaro theorizes from his many trophies that he even made it a point to never rank better than 3rd in any competition so as not to stand out Since his youth, Kira has been avoiding standing out, living a healthy life and following a strict regimen. He becomes bothered when someone disrupts his habits and goes to extreme lengths to get them back.',
+     role: 'Stand: Killer Queen',
+     origin: 'JoJo\'s Bizarre',
+     main_image: 'https://static.wikia.nocookie.net/jjba/images/9/94/KiraBDset.jpg/revision/latest/scale-to-width-down/270?cb=20181220053841',
+     slide_image_1: 'https://static.jojowiki.com/images/thumb/c/ce/latest/20210107171552/Yoshikage_Kira_Original_Infobox_Manga.png/400px-Yoshikage_Kira_Original_Infobox_Manga.png', 
+     slide_image_2: 'https://static.wikia.nocookie.net/jjba/images/d/d4/Beautiful_Duwang.png/revision/latest?cb=20170124192431',
+     slide_image_3: 'https://i.pinimg.com/originals/63/2c/ef/632cef9d3d378eddd3c52221baac332f.jpg'
      )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
+     character30 = Character.create(
+     name: 'Jolyne Cujoh',
+     bio: 'Flighty, abrupt, and snappy with her elders, Jolyne in adolescence would undoubtedly be considered a delinquent and a lost cause. Bitter at Jotaro for being absent from her life, she tried multiple times to catch her father\'s attention by committing various minor crimes and was arrested several times as a result. Because of her father\'s absence, Jolyne was said to be dependent on the affection and approval of those around her, and she was ready to cover Romeo\'s accident, resulting in her being sentenced to 15 years in prison for it',
+     role: 'Stand: Stone Free',
+     origin: 'JoJo\'s Bizarre',
+     main_image: 'https://w0.peakpx.com/wallpaper/222/803/HD-wallpaper-anime-jojo-s-bizarre-adventure-jolyne-cujoh-stone-ocean-jojo-s-bizarre-adventure.jpg',
+     slide_image_1: 'https://static.wikia.nocookie.net/p__/images/7/75/JolyneAnime.png/revision/latest/top-crop/width/360/height/360?cb=20210827055624&path-prefix=protagonist',
+     slide_image_2: 'https://cdn.anime-planet.com/characters/primary/jolyne-kujo-1-285x399.webp?t=1639007308',
+     slide_image_3: 'https://static.jojowiki.com/images/0/03/latest/20220111002807/Jolyne_Cujoh_Infobox_Anime.png'
      )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )    
-     character21 = Character.create(
-     name:
-     bio: 
-     role: 
-     origin:
-     main_image:
-     slide_image_1: 
-     slide_image_2: 
-     slide_image_3: 
-     )        
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )    
+    #  character21 = Character.create(
+    #  name:
+    #  bio: 
+    #  role: 
+    #  origin:
+    #  main_image:
+    #  slide_image_1: 
+    #  slide_image_2: 
+    #  slide_image_3: 
+    #  )        
      
 puts "characters have been seeded"
 
 
 puts"seeding thoughts 🤔"
-    thought1= Thought.create(content:"What a specimen", user_id: user1.id, character_id: character5.id)
-    thought2= Thought.create(content:"What a monster", user_id: user1.id, character_id: character5.id)
 puts "thoughts seeded"
 
 puts "seeding comments 💬"
-    comment1= Comment.create(content: "I dont agree", thought_id: thought2.id, user_id: user1.id)
-    comment1= Comment.create(content: "yeah you crazy", thought_id: thought2.id, user_id: user1.id)
 puts "seeded comments"
 
 puts "seeding reaction 🥵"
-    reaction1 = ThoughtReaction.create(is_valid: true, user_id: user1.id, thought_id: thought1.id)
 puts "reactions seeded"
 
 
 puts "seeding rating 💫"
-    rating1 = Rating.create(found_attractive: true, user_id: user1.id, character_id: character5.id)
 puts "seeded ratings"
 puts "seeding all done ✅"
 

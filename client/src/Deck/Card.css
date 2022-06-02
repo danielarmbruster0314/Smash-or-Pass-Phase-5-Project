@@ -12,10 +12,9 @@ font-size: 20px;
 
 .card_header{
     width: auto;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 10px black;
     color: white;
     font-family:'Koulen' ;
-    background-color: rgba(0,0,0,0.7);
     height: 50px;
     
 }

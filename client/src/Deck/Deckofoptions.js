@@ -114,7 +114,6 @@ setRightSwipe(false)
         r.json().then((error)=> console.log(error) )
       }
     })
-    console.log('somtheing could happen')
   }else if(count < 1){
     alert('please login in to participate none of this sessions swipes will be saved')
     setCount(2)
@@ -183,7 +182,6 @@ const classchangegone = empty? 'transform empty' : null
     const dir = xDir < 0 ? -1 : 1 
     // Direction should either point left or right
     //this shows the direction somone is seding the card 1 is to the right -1 is to the left
-     if (!down )  console.log(xDir)
     // if(trigger) 
    
     if (!down && trigger) gone.add(index)

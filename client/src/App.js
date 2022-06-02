@@ -14,9 +14,15 @@ const [user, setUser] = useState(null)
 	const signup = true
 	useEffect(() => {
 		fetch('/me')
-		.then((resp) => resp.json())
-		.then((user)=> setUser(user))
+		.then((r) => {
+		if (r.ok){
+            r.json().then((user) => setUser(user))
+          }else{
+            r.json().then((error)=> console.log(error) )
+          }})
+
 	},[])
+	
   return (
     <Routes>
 		
@@ -28,7 +34,7 @@ const [user, setUser] = useState(null)
 				<Route path='/signup' element={<AccountBox signup={signup} setUser={setUser}/>}></Route>
 				<Route path='/characterinfo' element={<Characterpage user={user} setUser={setUser}/>}></Route>
 				<Route path='/swipe' element={<Deck user={user} setUser={setUser}/>}></Route>
-				<Route path='/profile' element={<ProfilePage user={user} setUser={setUser}/>}></Route>
+				{user? (<Route path='/profile' element={<ProfilePage user={user} setUser={setUser}/>}></Route>) : null}
 			</>
 		</Routes>
   );

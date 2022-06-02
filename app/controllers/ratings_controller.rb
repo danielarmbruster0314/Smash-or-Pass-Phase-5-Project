@@ -20,7 +20,7 @@ class RatingsController < ApplicationController
       rating = found.update(found_attractive: params[:found_attractive])
       render json: rating
     else
-      reaction = Rating.create!(thought_reaction_params)
+      reaction = Rating.create!(rating_params)
       render json: reaction
     end
   end

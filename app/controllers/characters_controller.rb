@@ -27,9 +27,9 @@ class CharactersController < ApplicationController
 
 
   def swipe
-    characters = Character.left_outer_joins(:ratings).where.not(ratings: {user_id: params[:user_id]})
+    characters = Character.where.not(ratings: params[:user_id])
     swipebatch = characters.uniq
-    render json: swipebatch.take(15)
+    render json: swipebatch.take(10)
   end
   # GET /characters/1
   def show

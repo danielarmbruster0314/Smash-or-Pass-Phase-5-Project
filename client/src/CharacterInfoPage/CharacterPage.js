@@ -256,8 +256,6 @@ zIndex: '5'}}>
                                     key={item.label}
                                     className={item.id === selectedTab.id ? "selected" : ""}
                                     onClick={() => {setSelectedTab(item)
-                                    console.log(item)
-                                    console.log(selectedTab)
                                     }}
                                     >
                                     {`${item.icon} ${item.label}`}
