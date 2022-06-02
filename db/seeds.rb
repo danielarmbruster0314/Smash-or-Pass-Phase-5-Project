@@ -239,7 +239,516 @@ character1 = Character.create(
      slide_image_2: 'https://i.pinimg.com/736x/f9/4e/31/f94e317529fedec61ed0a290dc7f196a.jpg',
      slide_image_3: 'https://imageio.forbes.com/specials-images/imageserve/5f7bf03cdd503f978c323fc8/Overwatch-hero-Soldier-76/960x0.jpg?format=jpg&width=960'
      )     
-     
+     character22 = Character.create(
+        name: 'Valka Haddock',
+        bio: 'Her years of isolation and dealing with nothing but dragons has made her very distrusting of humans in general. Because of this, she has an absolute and black-and-white, perhaps even fatalistic view about people, believing them incapable of change and that some people are "born different". Despite her bitterness over her fellow man, Valka\'s past as a wife and mother allows her to possess an overwhelming love for those in her care, succeeding in building good relationships with the dragons she rescues.'
+        role: 'Rogue Dragon Rider',
+        origin: 'How to Train Your Dragon',
+        main_image: 'https://i.pinimg.com/736x/0e/b2/0a/0eb20ae792f34fef983ddd6997f97ec3.jpg',
+        slide_image_1: 'https://static.wikia.nocookie.net/howtotrainyourdragon/images/a/a5/THW-Valka-Transparent.png/revision/latest?cb=20191109224207',
+        slide_image_2: 'http://images6.fanpop.com/image/photos/37600000/Valka-Haddock-how-to-train-your-dragon-37688965-500-667.jpg',
+        slide_image_3: 'https://i.pinimg.com/736x/a1/00/c7/a100c7f30edd1d248ee6973075ac5f0f.jpg'
+        )
+    character23 = Character.create(
+     name: 'Big Band',
+     bio: 'Ben Birdland, aka "Big Band", is an observant detective who is committed to using his abilities to stop Skullgirls. When he was working as a police cop, he was one of the few (another being his former partner Irvin) who follows the rules and regulations while the others were corrupt. While he maintains himself to be calm and collected and prefers to talk things out, he will not hesitate to fight back when he has to. He is also fatherly towards the younger members of the Anti-Skullgirl Labs and shows consideration to others, such as Painwheel. Another example of his consideration is when he refused to kill Marie, who is carrying a part of the Medici Tower, under orders from Brain Drain since it will cause major damage to the area.',
+     role: 'Cybernetic Weapon',
+     origin: 'skullgirls',
+     main_image: 'https://skullgirls.com/wp-content/themes/skullgirls/images/characters/big-band.png',
+     slide_image_1: 'https://www.clipartmax.com/png/middle/182-1825578_the-skullgirls-sprite-of-the-day-is-skullgirls-attacks-big-band.png',
+     slide_image_2: 'https://wiki.gbl.gg/images/thumb/4/4d/SG_big_dpp.png/500px-SG_big_dpp.png',
+     slide_image_3: 'https://www.pngitem.com/pimgs/m/601-6011853_big-band-skullgirls-png-transparent-png.png'
+     )  
+    character21 = Character.create(
+     name: 'Saitama',
+     bio: 'Saitama is an indifferent person. Even the mightiest foes pose no challenge to him, so he does not take his hero work seriously, goes through everything with little to no effort, and yearns for an opponent that can provide him with a challenge.The lack of worthy opponents has led him to suffer from a self-imposed existential crisis, and he claims that his ability to feel any and all emotions has dulled considerably. The combination of his attitude, unstoppable power, and "unimpressive" appearance often causes his battles to become anticlimactic. Saitama will usually allow his opponents to rant about their motives and power up into their strongest forms, before obliterating them with a single punch.'
+     role: 'The Fist That Has Turned Against God ', 
+     origin: 'One-Punch Man',
+     main_image:'https://i.pinimg.com/originals/51/3b/b7/513bb7305275cb7abba98af4b0aeb88e.jpg',
+     slide_image_1:'http://static.zerochan.net/Saitama.%28One.Punch.Man%29.full.3440337.png',
+     slide_image_2: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/06/Saitama-in-a-crater-from-One-Punch-Man.jpg?q=50&fit=crop&w=1400&dpr=1.5',
+     slide_image_3: 'https://manshoor.com/uploads/thumbs/609/6091a5714cd563bf853db2c5db540c7c.jpg'
+     )
+     character21 = Character.create(
+     name: 'Benoit Blanc',
+     bio: 'Blanc is considered "The Last of the Gentlemen Sleuths" and in many ways is a typical portrayal of that kind of character. He\'s flamboyant, practical, gentlemanly, somewhat eccentric, a cigar chomper, but incredibly clever, intelligent, and an overall good detective. Despite these archetypes usually being British (as well as being played by a British actor), Blanc talks like a member of the Southern aristocracy with an accent that can only be described as a "Kentucky Fried Foghorn Leghorn Drawl".',
+     role: 'Detective',
+     origin: 'Knives Out',
+     main_image: 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/08/Knives-Out-Theory-Proves-Benoit-Blanc-Is-Smarter-Than-Anyone-Thought.jpg',
+     slide_image_1:'https://cdn.mos.cms.futurecdn.net/EEFEz6zjsqi9LxZtSpvBUP.jpg', 
+     slide_image_2: 'https://images.squarespace-cdn.com/content/v1/5a5ccb53ccc5c5e98ccd9457/1590648618514-BVGOK5EW6VIP9DYV49W4/production+still+belt+suspenders+resize.jpg',
+     slide_image_3: 'https://theubj.com/wp-content/uploads/2021/10/A842E398-FFDF-43F1-9CF0-3E54F69267CB.jpeg'
+     )    
+     character21 = Character.create(
+     name: 'Connor',
+     bio: 'From the start, Connor is a neutral character and is indifferent to the treatment of androids in Detroit. Depending on the player\'s choices, Connor’s core personality throughout the game can take several directions, ultimately either making him comply with his directives and consider himself a machine, or consider himself an individual being and seek to join his people.',
+     role: 'The Negotiator', 
+     origin: 'Detroit: Become Human',
+     main_image: 'https://cdn.vox-cdn.com/thumbor/ewoYWBq9MauLxB7FULwq5OIUCe4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/13636275/5fcb5d66f7f4077ad9f392e8b8fb61c4.jpg',
+     slide_image_1: 'https://i.pinimg.com/originals/17/ab/a3/17aba382591e2f97ece33a52950f3a13.jpg',
+     slide_image_2: 'https://i1.sndcdn.com/artworks-000355957812-ag1rfx-t500x500.jpg',
+     slide_image_3: 'https://oyster.ignimgs.com/mediawiki/apis.ign.com/detroit-become-human/4/45/Connor01.jpg?width=1280'
+     )    
+     character21 = Character.create(
+     name: 'Josuke Higashikata',
+     bio: 'Josuke is relatively polite and has been shown to strongly value familial relationships. Being amnesiac, Josuke places a great emphasis on one\'s family and legacy, wishing to learn his own past. He seems to be totally oblivious when it comes to mundane things while at the same time retaining in-depth knowledge of animal and plant species.',
+     role: 'Stand: Soft & Wet'
+     origin: 'JoJo\'s Bizarre',
+     main_image: 'https://i.pinimg.com/originals/90/75/52/9075521c5d3916b47821c8121b01a9f4.jpg',
+     slide_image_1: 'https://static.jojowiki.com/images/thumb/e/e7/latest/20191208113052/JosukeRender.png/160px-JosukeRender.png',
+     slide_image_2: 'https://static.jojowiki.com/images/a/a1/latest/20191208112759/Josuke_DU_Infobox_Manga.png',
+     slide_image_3: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/10/Josuke-Ruined-His-Likability.jpg'
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )    
+     character21 = Character.create(
+     name:
+     bio: 
+     role: 
+     origin:
+     main_image:
+     slide_image_1: 
+     slide_image_2: 
+     slide_image_3: 
+     )        
      
 puts "characters have been seeded"
 
