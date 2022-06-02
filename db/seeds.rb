@@ -230,15 +230,17 @@ character1 = Character.create(
      slide_image_3: 'https://images.gnwcdn.com/2016/usgamer/Overwatch-Guide-Zenyatta-Header.jpg/EG11/thumbnail/1920x1080/format/jpg/quality/65/21-12-2017-overwatch-how-to-play-zenyatta.jpg'
      )                
     character21 = Character.create(
-     name:'',
-     bio: '',
-     role: '',
-     origin:'',
-     main_image:'',
-     slide_image_1: '',
-     slide_image_2: '',
-     slide_image_3: ''
-     )                    
+     name:'Jack Francis Morrison',
+     bio: 'Currently the target of an international manhunt, the vigilante known as Soldier: 76 wages a personal war to expose the truth behind Overwatch\'s collapse. Soldier: 76 revealed himself in a string of attacks that crisscrossed the globe, targeting financial institutions, shadowy corporations, and secure Overwatch facilities. Though to the outside world his motives are inscrutable, there are those who claim that he is a former Overwatch agent, determined to shed light on the conspiracy that brought down the organization.',
+     role: 'Soldier: 76',
+     origin:'Overwatch',
+     main_image:'https://cdn1.dotesports.com/wp-content/uploads/2018/08/11150220/ac74e2ca-1e5a-42c5-a876-7d2c70efc369.jpg',
+     slide_image_1: 'https://www.pngfind.com/pngs/m/295-2955482_soldier-76-pictures-overwatch-soldier-76-png-transparent.png',
+     slide_image_2: 'https://i.pinimg.com/736x/f9/4e/31/f94e317529fedec61ed0a290dc7f196a.jpg',
+     slide_image_3: 'https://imageio.forbes.com/specials-images/imageserve/5f7bf03cdd503f978c323fc8/Overwatch-hero-Soldier-76/960x0.jpg?format=jpg&width=960'
+     )     
+     
+     
 puts "characters have been seeded"
 
 
