@@ -82,6 +82,26 @@ button{
   }
 
 
+  @media only screen and (max-width: 455px) {
+    .home_words{
+      display: none;
+    }
+    .home_option{
+      padding: 20px 0px;
+      font-size: 60px;
+      border-radius: 50%;
+      height: 120px;
+      width: 120px;
+    }
+    .tea{
+      font-size: 65px !important;
+    }
+    .home_button img{
+      display: none;
+    }
+  }
+
+
   @media only screen and (max-width: 670px) {
     .home_words{
       display: none;
@@ -93,3 +113,4 @@ button{
       font-size: 65px !important;
     }
   }
+

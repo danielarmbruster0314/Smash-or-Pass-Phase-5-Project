@@ -15,3 +15,11 @@
   .home_option_nav:hover{
     animation: gradient 2s ease 
   }
+
+  @media only screen and (max-width: 455px) {
+    .nav_button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }

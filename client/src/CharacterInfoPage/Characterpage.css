@@ -360,3 +360,21 @@
   font-weight: 500;
   font-size: 22px;
 }
+
+@media only screen and (max-width: 455px) {
+  .characterimages::before{
+    display: none;
+  }
+  .characterpage{
+    margin: 0px 0px;
+  }
+  .comments{
+    margin: 0px 0px;
+  }
+  .input_bar_for_thought{
+    font-size: 20px;
+  }
+  .characterimages{
+    height: 950px;
+  }
+}

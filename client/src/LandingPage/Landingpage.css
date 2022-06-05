@@ -41,3 +41,18 @@ h1{
 .navbar{
     z-index: 250;
 }
+
+@media only screen and (max-width: 455px) {
+    .landingpage{
+        margin: 0px 0px;
+        background-color: white;
+       
+    }
+    
+
+    .landingpage h1{
+        color:white;
+    text-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px black;
+    }
+  }
