@@ -147,4 +147,10 @@
   .message_container em{
     font-size: 18px;
   }
+
+  .message_container button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
