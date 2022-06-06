@@ -274,6 +274,7 @@ zIndex: '5'}}>
                                     initial={{ opacity: 0, y: 20 }}
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.15 }}
+                                    className='character_page_posts_container'
                                 >
                                     <motion.div 
                                     layout 

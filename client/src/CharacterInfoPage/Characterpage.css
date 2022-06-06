@@ -379,5 +379,9 @@
   }
  .main span{
    font-size: 45px !important;
+   top: -90px !important;
+ }
+ .character_page_posts_container{
+   min-width: 455px;
  }
 }
