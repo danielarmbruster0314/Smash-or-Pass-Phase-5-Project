@@ -137,11 +137,11 @@
   }
 
   .validate_button{
-    transform:scale(0.97);
+    transform:scale(0.80);
   }
 
   .invalidate_button{
-    transform:scale(0.97);
+    transform:scale(0.80);
   }
 
   .message_container em{
