@@ -29,7 +29,8 @@
     }
 
     .nav_button img{
-      height: 130px;
-      width: 130px;
+      height: 110px;
+      width: 110px;
+      border-radius: 90px;
     }
   }

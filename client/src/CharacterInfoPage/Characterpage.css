@@ -303,8 +303,8 @@
     width: 100%;
     padding: 20px;
     background-color: #888;
-    border-radius: 0px 0px 20px 20px;
-    box-shadow: 0px 8px 10px black;
+    /* border-radius: 0px 0px 20px 20px; */
+    /* box-shadow: 0px 8px 10px black; */
     margin-bottom: 5px;
     color: white;
     flex-shrink: 2.1;
@@ -379,9 +379,18 @@
   }
  .main span{
    font-size: 45px !important;
-   top: -85px !important;
+   top: -80px !important;
  }
  .character_page_posts_container{
    min-width: 455px;
  }
+
+ .characterinfo{
+  width: 100%;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 5px;
+  color: black;
+  flex-shrink: 2.1;
+}
 }
