@@ -130,3 +130,21 @@
   height: 50px;
   width: 50px;
 }
+
+@media only screen and (max-width: 455px) {
+  .messages_li {
+    padding: 30px;
+  }
+
+  .validate_button{
+    transform:scale(0.97);
+  }
+
+  .invalidate_button{
+    transform:scale(0.97);
+  }
+
+  .message_container em{
+    font-size: 18px;
+  }
+}
