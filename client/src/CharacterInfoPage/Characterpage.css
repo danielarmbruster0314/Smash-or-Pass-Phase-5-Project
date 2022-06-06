@@ -377,4 +377,12 @@
   .characterimages{
     height: 950px;
   }
+
+  .main{
+    min-width: 450px;
+  }
+
+  .main span{
+    font-size: 30px;
+  }
 }
