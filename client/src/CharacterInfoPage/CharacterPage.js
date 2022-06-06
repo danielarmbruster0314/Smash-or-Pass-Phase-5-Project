@@ -160,8 +160,8 @@ function handlePost(){
         .then((r) => {
             if (r.ok){
                 r.json().then((data) => {
-                    console.log(data)
-                  setNewPost(data)
+                    setOpenInput(false)
+                    setNewPost(data)
                 })
             }else{
                 r.json().then((error)=> console.log(error) )

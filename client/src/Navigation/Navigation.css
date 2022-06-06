@@ -22,4 +22,8 @@
       align-items: center;
       justify-content: center;
     }
+    .nav_button div{
+      justify-content: center;
+      align-items: center;
+    }
   }
